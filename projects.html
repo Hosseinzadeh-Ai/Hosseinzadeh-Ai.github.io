@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <!-- امنیت: دیوار آتشین مرورگر (CSP) -->
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://fonts.googleapis.com; font-src 'self' https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://fonts.gstatic.com; script-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com; img-src 'self' data:;">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>پروژه‌ها | وب‌سایت شخصی</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- هدر -->
+    <header class="site-header">
+        <div class="container header-container">
+            <div class="logo"><span class="highlight">مهندس</span> نرم افزار</div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html">خانه</a></li>
+                    <li><a href="about.html">درباره من</a></li>
+                    <li><a href="projects.html" class="active">پروژه‌ها</a></li> <!-- لینک فعال -->
+                    <li><a href="index.html#contact">تماس</a></li>
+                </ul>
+            </nav>
+            <div class="lang-switch"><a href="en.html" class="btn-lang">English</a></div>
+        </div>
+    </header>
+
+    <!-- تیتر صفحه -->
+    <section class="page-header">
+        <div class="container">
+            <h1>نمونه‌کارهای <span class="highlight">من</span></h1>
+            <p>مجموعه‌ای از پروژه‌های هوش مصنوعی و توسعه نرم افزار</p>
+        </div>
+    </section>
+
+    <!-- لیست پروژه‌ها -->
+    <section class="portfolio-section" style="background-color: #0f172a;">
+        <div class="container">
+            
+            <!-- (اختیاری) دکمه‌های فیلتر -->
+            <!-- <div class="filter-buttons">
+                <button class="active">همه</button>
+                <button>هوش مصنوعی</button>
+                <button>وب</button>
+            </div> -->
+
+            <div class="portfolio-grid">
+                
+                <!-- پروژه ۱ -->
+                <div class="project-card">
+                    <div class="project-image">
+                        <div class="placeholder-img color-1"></div>
+                    </div>
+                    <div class="project-info">
+                        <h3> ایجنت هوشمند رباتیک EdgeBot</h3>
+                        <p>طراحی ربات،آموزش رباتیک،تولید پروژه،عیب یابی،برنامه نویسی</p>
+                        <div class="tech-stack">
+                            <span>Python</span><span>JavaScript/TypeScript</span>
+                        </div>
+                        <!-- لینک به صفحه جزئیات پروژه -->
+                        <div class="project-links">
+                            <a href="project-detail.html" class="link-btn">
+                                <i class="fas fa-info-circle"></i> جزئیات بیشتر
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- پروژه ۲ -->
+                <div class="project-card">
+                    <div class="project-image">
+                        <div class="placeholder-img color-2"></div>
+                    </div>
+                    <div class="project-info">
+                        <h3>  ایجنت مشاور کسب و کارها ElevAI
+                        </h3>
+                        <p>تحلیل ایده ،اعتبارسنجی ایده، طراحی مدل کسب‌وکار،تحلیل بازار هدف</p>
+                        <div class="tech-stack">
+                            <span>Python</span><span>Node.js</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="project-2.html" class="link-btn">
+                                <i class="fas fa-info-circle"></i> جزئیات بیشتر
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- پروژه ۳ -->
+                <div class="project-card">
+                    <div class="project-image">
+                        <div class="placeholder-img color-3"></div>
+                    </div>
+                    <div class="project-info">
+                        <h3>نویسنده کتاب</h3>
+                        <p>کاربرد الکترونیک در رباتیک</p>
+                        <div class="tech-stack">
+                            <span>رباتیک</span><span>الکترونیک</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="project-3.html" class="link-btn">
+                                <i class="fas fa-info-circle"></i> جزئیات بیشتر
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- پروژه ۴ (جدید) -->
+                <div class="project-card">
+                    <div class="project-image">
+                        <div class="placeholder-img" style="background: linear-gradient(45deg, #444, #888);"></div>
+                    </div>
+                    <div class="project-info">
+                        <h3>مقاله حکمرانی داده و هوش مصنوعی</h3>
+                        <p>تاثیر هوش مصنوعی در اقتصاد دیجیتال</p>
+                        <div class="tech-stack">
+                            <span>تحلیلی</span><span>مروری</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="project-4.html" class="link-btn">
+                                <i class="fas fa-info-circle"></i> جزئیات بیشتر
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- فوتر -->
+    <footer class="site-footer">
+        <div class="container">
+            <p>© 2026 طراحی و توسعه توسط <span class="highlight">ابوالفضل حسین زاده</span></p>
+        </div>
+    </footer>
+
+</body>
+</html>

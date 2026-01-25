@@ -1,0 +1,834 @@
+/* تنظیمات کلی و ریست کردن مرورگر */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Vazirmatn', sans-serif;
+    /* رنگ پس‌زمینه تیره (سرمه‌ای خیلی تیره) */
+    background-color: #0f172a; 
+    /* رنگ متن اصلی (سفید مایل به خاکستری) */
+    color: #e2e8f0;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* کلاس کانتینر برای وسط‌چین کردن محتوا */
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* استایل لینک‌ها */
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: 0.3s;
+}
+
+ul {
+    list-style: none;
+}
+
+/* --- استایل هدر (منوی بالا) --- */
+.site-header {
+    background-color: rgba(15, 23, 42, 0.95); /* کمی شیشه‌ای */
+    padding: 15px 0;
+    position: sticky; /* چسبیدن به بالا */
+    top: 0;
+    z-index: 1000;
+    border-bottom: 1px solid #1e293b;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* استایل لوگو */
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #fff;
+}
+
+/* رنگ نئونی فیروزه‌ای برای کلمات خاص */
+.highlight {
+    color: #00d4ff; 
+}
+
+/* چیدمان منو */
+.main-nav ul {
+    display: flex;
+    gap: 25px;
+}
+
+.main-nav a {
+    font-size: 0.95rem;
+    color: #94a3b8;
+}
+
+.main-nav a:hover {
+    color: #00d4ff; /* تغییر رنگ هنگام موس */
+}
+
+/* دکمه تغییر زبان */
+.btn-lang {
+    border: 1px solid #00d4ff;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    color: #00d4ff;
+}
+
+.btn-lang:hover {
+    background-color: #00d4ff;
+    color: #0f172a;
+    box-shadow: 0 0 10px #00d4ff; /* درخشش نئونی */
+}
+
+/* ریسپانسیو برای موبایل (فعلا ساده) */
+@media (max-width: 768px) {
+    .main-nav {
+        display: none; /* فعلا منو را در موبایل مخفی میکنیم تا بعدا دکمه همبرگری بسازیم */
+    }
+}
+/* --- استایل بخش قهرمان (Hero) --- */
+.hero-section {
+    padding: 100px 0; /* فاصله از بالا و پایین */
+    min-height: 80vh; /* حداقل ارتفاع */
+    display: flex;
+    align-items: center;
+}
+
+.hero-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+/* استایل متن‌ها */
+.hero-content {
+    flex: 1; /* نصف فضا را بگیرد */
+    padding-left: 50px;
+}
+
+.hero-subtitle {
+    color: #00d4ff; /* رنگ فیروزه‌ای */
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+    display: block;
+}
+
+.hero-content h1 {
+    font-size: 3rem; /* سایز بزرگ تیتر */
+    line-height: 1.2;
+    margin-bottom: 20px;
+    color: #fff;
+}
+
+.hero-content p {
+    font-size: 1.1rem;
+    color: #94a3b8; /* خاکستری روشن */
+    margin-bottom: 30px;
+    max-width: 500px;
+}
+
+/* استایل دکمه‌ها */
+.hero-buttons {
+    display: flex;
+    gap: 15px;
+}
+
+.btn {
+    padding: 12px 30px;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+    display: inline-block;
+}
+
+/* دکمه اصلی (توپر) */
+.btn-primary {
+    background-color: #00d4ff;
+    color: #0f172a;
+    border: 2px solid #00d4ff;
+    box-shadow: 0 0 15px rgba(0, 212, 255, 0.4); /* سایه نئونی */
+}
+
+.btn-primary:hover {
+    background-color: transparent;
+    color: #00d4ff;
+}
+
+/* دکمه ثانویه (توخالی) */
+.btn-outline {
+    background-color: transparent;
+    color: #fff;
+    border: 2px solid #fff;
+}
+
+.btn-outline:hover {
+    background-color: #fff;
+    color: #0f172a;
+}
+
+/* استایل بخش تصویر */
+.hero-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+/* دایره نئونی (جایگزین موقت عکس) */
+.glowing-circle {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    background: linear-gradient(45deg, #00d4ff, #a855f7); /* گرادینت آبی به بنفش */
+    filter: blur(60px); /* محو کردن برای ایجاد هاله نور */
+    opacity: 0.6;
+    animation: pulse 3s infinite alternate; /* انیمیشن تپش */
+}
+
+/* انیمیشن تپش نور */
+@keyframes pulse {
+    0% { transform: scale(0.8); opacity: 0.5; }
+    100% { transform: scale(1.1); opacity: 0.8; }
+}
+
+/* ریسپانسیو برای موبایل */
+@media (max-width: 768px) {
+    .hero-container {
+        flex-direction: column-reverse; /* عکس برود بالا، متن بیاید پایین */
+        text-align: center;
+    }
+
+    .hero-content {
+        padding-left: 0;
+        margin-top: 40px;
+    }
+
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+    
+    .hero-buttons {
+        justify-content: center;
+    }
+    
+    .glowing-circle {
+        width: 200px;
+        height: 200px;
+    }
+}
+/* --- استایل بخش مهارت‌ها --- */
+.skills-section {
+    padding: 80px 0;
+    background-color: #0f172a; /* همان رنگ پس‌زمینه اصلی */
+}
+
+/* استایل تیترهای بخش‌ها */
+.section-title {
+    text-align: center;
+    font-size: 2rem;
+    color: #fff;
+    margin-bottom: 50px;
+    position: relative;
+}
+
+/* خط زیر تیتر برای زیبایی */
+.section-title::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background-color: #00d4ff;
+    margin: 10px auto 0;
+    border-radius: 2px;
+}
+
+/* شبکه گرید برای چیدمان کارت‌ها */
+.skills-grid {
+    display: grid;
+    /* این خط جادویی باعث می‌شود در موبایل ۱ ستون و در دسکتاپ ۴ ستون شود */
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); 
+    gap: 25px;
+}
+
+/* استایل کارت مهارت */
+.skill-card {
+    background-color: #1e293b; /* کمی روشن‌تر از پس‌زمینه */
+    padding: 30px 20px;
+    border-radius: 15px;
+    text-align: center;
+    transition: 0.3s;
+    border: 1px solid transparent;
+    cursor: default;
+}
+
+/* آیکون داخل کارت */
+.skill-card i {
+    font-size: 3rem;
+    color: #94a3b8;
+    margin-bottom: 15px;
+    transition: 0.3s;
+}
+
+/* متن داخل کارت */
+.skill-card h3 {
+    font-size: 1rem;
+    color: #e2e8f0;
+}
+
+/* افکت هاور (وقتی موس می‌رود روی کارت) */
+.skill-card:hover {
+    transform: translateY(-10px); /* کارت کمی بالا می‌آید */
+    border-color: #00d4ff; /* دورش آبی می‌شود */
+    box-shadow: 0 10px 20px rgba(0, 212, 255, 0.15); /* سایه نئونی */
+}
+
+.skill-card:hover i {
+    color: #00d4ff; /* آیکون آبی می‌شود */
+    transform: scale(1.1); /* آیکون کمی بزرگ می‌شود */
+}
+/* --- استایل بخش نمونه‌کارها --- */
+.portfolio-section {
+    padding: 80px 0;
+    background-color: #0b1120; /* کمی تیره‌تر از پس‌زمینه اصلی برای تنوع */
+}
+
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+/* کارت پروژه */
+.project-card {
+    background-color: #1e293b;
+    border-radius: 15px;
+    overflow: hidden; /* برای اینکه عکس از کادر بیرون نزند */
+    transition: 0.3s;
+    border: 1px solid #334155;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    border-color: #00d4ff;
+}
+
+/* بخش تصویر پروژه */
+.project-image {
+    height: 200px;
+    overflow: hidden;
+    position: relative;
+}
+
+/* عکس جایگزین (چون فعلا عکس واقعی نداریم) */
+.placeholder-img {
+    width: 100%;
+    height: 100%;
+    transition: 0.5s;
+}
+.color-1 { background: linear-gradient(45deg, #ff00cc, #333399); }
+.color-2 { background: linear-gradient(45deg, #00d4ff, #00ff99); }
+.color-3 { background: linear-gradient(45deg, #ff9900, #ff0000); }
+
+/* افکت زوم روی عکس */
+.project-card:hover .placeholder-img {
+    transform: scale(1.1);
+}
+
+/* اطلاعات پروژه */
+.project-info {
+    padding: 20px;
+}
+
+.project-info h3 {
+    font-size: 1.2rem;
+    color: #fff;
+    margin-bottom: 10px;
+}
+
+.project-info p {
+    font-size: 0.9rem;
+    color: #94a3b8;
+    margin-bottom: 15px;
+    height: 60px; /* ارتفاع ثابت برای نظم */
+    overflow: hidden;
+}
+
+/* تکنولوژی‌های استفاده شده (تگ‌ها) */
+.tech-stack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 20px;
+}
+
+.tech-stack span {
+    background-color: #0f172a;
+    color: #00d4ff;
+    font-size: 0.75rem;
+    padding: 4px 10px;
+    border-radius: 20px;
+    border: 1px solid #00d4ff;
+}
+
+/* دکمه‌های پایین کارت */
+.project-links {
+    display: flex;
+    gap: 10px;
+}
+
+.link-btn {
+    flex: 1;
+    text-align: center;
+    padding: 8px 0;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    background-color: #00d4ff;
+    color: #0f172a;
+    font-weight: bold;
+}
+
+.link-btn:hover {
+    background-color: #fff;
+}
+
+.link-btn.github {
+    background-color: transparent;
+    border: 1px solid #94a3b8;
+    color: #94a3b8;
+}
+
+.link-btn.github:hover {
+    border-color: #fff;
+    color: #fff;
+}
+/* --- استایل بخش تماس --- */
+.contact-section {
+    padding: 80px 0;
+    background-color: #0f172a;
+}
+
+.contact-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 50px;
+}
+
+/* استایل اطلاعات تماس (سمت راست) */
+.contact-info {
+    flex: 1;
+}
+
+.contact-info p {
+    color: #94a3b8;
+    margin-bottom: 30px;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    font-size: 1.1rem;
+    color: #e2e8f0;
+}
+
+.contact-item i {
+    color: #00d4ff;
+    margin-left: 15px; /* فاصله آیکون از متن در حالت راست‌چین */
+    font-size: 1.2rem;
+}
+
+/* آیکون‌های شبکه‌های اجتماعی */
+.social-links {
+    margin-top: 30px;
+    display: flex;
+    gap: 15px;
+}
+
+.social-icon {
+    width: 45px;
+    height: 45px;
+    background-color: #1e293b;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 1.2rem;
+    border: 1px solid #334155;
+    transition: 0.3s;
+}
+
+.social-icon:hover {
+    background-color: #00d4ff;
+    color: #0f172a;
+    transform: translateY(-3px);
+    box-shadow: 0 0 15px rgba(0, 212, 255, 0.5);
+}
+
+/* استایل فرم (سمت چپ) */
+.contact-form {
+    flex: 1;
+    background-color: #1e293b;
+    padding: 30px;
+    border-radius: 15px;
+    border: 1px solid #334155;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+/* ورودی‌های فرم */
+input, textarea {
+    width: 100%;
+    padding: 12px;
+    background-color: #0f172a;
+    border: 1px solid #334155;
+    border-radius: 8px;
+    color: #fff;
+    font-family: 'Vazirmatn', sans-serif;
+    font-size: 1rem;
+    outline: none;
+    transition: 0.3s;
+}
+
+input:focus, textarea:focus {
+    border-color: #00d4ff;
+    box-shadow: 0 0 8px rgba(0, 212, 255, 0.2);
+}
+
+/* --- استایل فوتر --- */
+.site-footer {
+    background-color: #0b1120;
+    padding: 20px 0;
+    text-align: center;
+    border-top: 1px solid #1e293b;
+    color: #64748b;
+    font-size: 0.9rem;
+}
+
+/* ریسپانسیو بخش تماس */
+@media (max-width: 768px) {
+    .contact-container {
+        flex-direction: column; /* ستون‌ها زیر هم قرار بگیرند */
+    }
+    
+    .contact-info, .contact-form {
+        width: 100%;
+    }
+}
+/* --- تنظیمات مخصوص نسخه انگلیسی (LTR) --- */
+
+/* وقتی جهت صفحه چپ به راست است (انگلیسی) */
+html[dir="ltr"] .hero-content {
+    padding-left: 0;
+    padding-right: 50px; /* فاصله متن از عکس در حالت انگلیسی */
+}
+
+html[dir="ltr"] .contact-item i {
+    margin-left: 0;
+    margin-right: 15px; /* فاصله آیکون تماس از متن در انگلیسی */
+}
+
+html[dir="ltr"] .section-title {
+    /* تیترها در انگلیسی معمولا چپ‌چین یا وسط‌چین هستند، اینجا وسط می‌ماند */
+}
+
+/* اصلاح ریسپانسیو برای انگلیسی */
+@media (max-width: 768px) {
+    html[dir="ltr"] .hero-content {
+        padding-right: 0;
+    }
+}
+/* --- استایل‌های مخصوص صفحات داخلی (مثل درباره من) --- */
+
+/* هدر بالای صفحات داخلی */
+.page-header {
+    background-color: #0b1120;
+    padding: 100px 0 50px;
+    text-align: center;
+    border-bottom: 1px solid #1e293b;
+}
+
+.page-header h1 {
+    font-size: 2.5rem;
+    color: #fff;
+    margin-bottom: 10px;
+}
+
+.page-header p {
+    color: #94a3b8;
+}
+
+/* بخش اصلی بیوگرافی */
+.about-main {
+    padding: 80px 0;
+    background-color: #0f172a;
+}
+
+.about-container {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+}
+
+/* تصویر پروفایل در صفحه درباره من */
+.about-img {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.img-box {
+    width: 300px;
+    height: 350px;
+    border-radius: 20px;
+    overflow: hidden;
+    border: 2px solid #00d4ff;
+    box-shadow: 15px 15px 0px rgba(0, 212, 255, 0.1); /* سایه فانتزی */
+    position: relative;
+}
+
+.placeholder-profile {
+    width: 100%;
+    height: 100%;
+    background-color: #1e293b; /* رنگ طوسی جای عکس */
+}
+
+/* متن بیوگرافی */
+.about-text {
+    flex: 1.5;
+    color: #e2e8f0;
+}
+
+.about-text h2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.about-text h3 {
+    font-size: 1.2rem;
+    color: #00d4ff;
+    margin-bottom: 20px;
+}
+
+.about-text p {
+    margin-bottom: 15px;
+    color: #94a3b8;
+    text-align: justify;
+}
+
+/* لیست اطلاعات شخصی */
+.info-list ul {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* دو ستونه */
+    gap: 15px;
+    margin: 30px 0;
+}
+
+.info-list li {
+    color: #fff;
+    font-size: 0.95rem;
+    border-bottom: 1px solid #1e293b;
+    padding-bottom: 10px;
+}
+
+.info-list strong {
+    color: #00d4ff;
+    margin-left: 5px;
+}
+
+/* ریسپانسیو صفحه درباره من */
+@media (max-width: 768px) {
+    .about-container {
+        flex-direction: column;
+    }
+    
+    .img-box {
+        width: 100%;
+        max-width: 300px;
+        height: 300px;
+    }
+    
+    .info-list ul {
+        grid-template-columns: 1fr; /* در موبایل یک ستونه شود */
+    }
+}
+/* --- استایل صفحه جزئیات پروژه --- */
+
+.project-detail-section {
+    padding: 120px 0 80px; /* فاصله از بالا بخاطر هدر */
+    background-color: #0f172a;
+    min-height: 100vh;
+}
+
+.back-link {
+    display: inline-block;
+    color: #94a3b8;
+    margin-bottom: 20px;
+    font-size: 0.9rem;
+}
+
+.back-link:hover {
+    color: #00d4ff;
+}
+
+.detail-title {
+    font-size: 2.5rem;
+    color: #fff;
+    margin-bottom: 30px;
+}
+
+.detail-image {
+    margin-bottom: 50px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+}
+
+/* چیدمان محتوا (متن راست، سایدبار چپ) */
+.detail-content {
+    display: flex;
+    gap: 50px;
+}
+
+.detail-text {
+    flex: 2; /* متن فضای بیشتری بگیرد */
+    color: #e2e8f0;
+}
+
+.detail-text h2 {
+    color: #fff;
+    margin-bottom: 15px;
+    font-size: 1.8rem;
+}
+
+.detail-text p {
+    margin-bottom: 20px;
+    line-height: 1.8;
+    color: #cbd5e1;
+}
+
+.feature-list {
+    list-style: disc;
+    margin-right: 20px; /* فاصله برای بولت‌ها در راست‌چین */
+    margin-bottom: 30px;
+}
+
+.feature-list li {
+    margin-bottom: 10px;
+    color: #cbd5e1;
+}
+
+/* سایدبار (باکس اطلاعات) */
+.detail-sidebar {
+    flex: 1;
+}
+
+.sidebar-box {
+    background-color: #1e293b;
+    padding: 25px;
+    border-radius: 15px;
+    border: 1px solid #334155;
+    margin-bottom: 20px;
+}
+
+.sidebar-box h3 {
+    color: #fff;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #334155;
+    padding-bottom: 10px;
+}
+
+.sidebar-box ul li {
+    margin-bottom: 12px;
+    color: #cbd5e1;
+    font-size: 0.95rem;
+}
+
+.sidebar-box strong {
+    color: #00d4ff;
+}
+
+/* دکمه‌های تمام عرض */
+.full-width {
+    display: block;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+/* ریسپانسیو صفحه جزئیات */
+@media (max-width: 768px) {
+    .detail-content {
+        flex-direction: column; /* در موبایل زیر هم شوند */
+    }
+    
+    .detail-title {
+        font-size: 1.8rem;
+    }
+}
+/* --- استایل بخش خدمات (Services) --- */
+.services-section {
+    padding: 80px 0;
+    background-color: #0b1120; /* پس‌زمینه متفاوت */
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.service-card {
+    background-color: #1e293b;
+    padding: 40px 30px;
+    border-radius: 15px;
+    text-align: center;
+    transition: 0.3s;
+    border: 1px solid transparent;
+}
+
+.service-card i {
+    font-size: 3rem;
+    color: #00d4ff;
+    margin-bottom: 20px;
+}
+
+.service-card h3 {
+    color: #fff;
+    margin-bottom: 15px;
+    font-size: 1.3rem;
+}
+
+.service-card p {
+    color: #94a3b8;
+    font-size: 0.95rem;
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+    border-color: #00d4ff;
+    box-shadow: 0 10px 30px rgba(0, 212, 255, 0.1);
+}
+
+/* استایل بخش پروژه‌های منتخب */
+.featured-projects {
+    padding: 80px 0;
+    background-color: #0f172a;
+}

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <!-- امنیت: دیوار آتشین مرورگر (CSP) -->
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://fonts.googleapis.com; font-src 'self' https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://fonts.gstatic.com; script-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com; img-src 'self' data:;">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>درباره من | وب‌سایت شخصی</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- هدر (مشابه صفحه اصلی) -->
+    <header class="site-header">
+        <div class="container header-container">
+            <div class="logo"><span class="highlight">مهندس</span> نرم افزار</div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html">خانه</a></li>
+                    <li><a href="about.html" class="active">درباره من</a></li> <!-- این لینک فعال است -->
+                    <li><a href="projects.html">پروژه‌ها</a></li>
+                    <li><a href="index.html#contact">تماس</a></li>
+                </ul>
+            </nav>
+            <div class="lang-switch"><a href="en.html" class="btn-lang">English</a></div>
+        </div>
+    </header>
+
+    <!-- تیتر بالای صفحه -->
+    <section class="page-header">
+        <div class="container">
+            <h1>درباره <span class="highlight">من</span></h1>
+            <p>مسیر من در دنیای برنامه نویسی و هوش مصنوعی</p>
+        </div>
+    </section>
+
+    <!-- بخش بیوگرافی -->
+    <section class="about-main">
+        <div class="container about-container">
+            <!-- تصویر سمت راست -->
+            <div class="about-img">
+                <div class="img-box">
+                    <!-- اینجا عکس خودت رو بذار -->
+                    <div class="placeholder-profile"></div> 
+                    <!-- <img src="images/me.jpg" alt="تصویر من"> -->
+                </div>
+            </div>
+            
+            <!-- متن سمت چپ -->
+            <div class="about-text">
+                <h2>من ابوالفضل حسین زاده هستم</h2>
+                <h3>مهندس نرم افزار و متخصص هوش مصنوعی</h3>
+                <p>
+                    من یک مهندس نرم‌افزار با اشتیاق فراوان به تکنولوژی‌های نوین هستم. فعالیت حرفه‌ای من از سال ۱۴۰۰ آغاز شد. 
+                    همیشه به دنبال یادگیری ابزارهای جدید هستم و باور دارم که هوش مصنوعی آینده جهان را تغییر خواهد داد.
+                </p>
+                <p>
+                    در حال حاضر روی پروژه‌های توسعه نرم افزار و ساخت ایجنت های هوشمند تمرکز دارم. هدف من خلق محصولاتی است که زندگی انسان‌ها را ساده‌تر کند.
+                </p>
+                
+                <div class="info-list">
+                    <ul>
+                        <li><strong>وضعیت:</strong> آماده همکاری</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- بخش مهارت‌ها (انتقال یافته از ایندکس قبلی) -->
+    <section class="skills-section">
+        <div class="container">
+            <h2 class="section-title">مهارت‌های <span class="highlight">تخصصی</span></h2>
+            <div class="skills-grid">
+                <div class="skill-card"><i class="fab fa-python"></i><h3>Python</h3></div>
+                <div class="skill-card"><i class="fas fa-brain"></i><h3>Machine Learning</h3></div>
+                <div class="skill-card"><i class="fab fa-html5"></i><h3>Software development</h3></div>
+                <div class="skill-card"><i class="fab fa-js"></i><h3>react.js</h3></div>
+                <div class="skill-card"><i class="fas fa-database"></i><h3>Data Science</h3></div>
+                <div class="skill-card"><i class="fab fa-git-alt"></i><h3>Web design</h3></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- فوتر -->
+    <footer class="site-footer">
+        <div class="container">
+            <p>© 2026 طراحی و توسعه توسط <span class="highlight">ابوالفضل حسین زاده</span></p>
+        </div>
+    </footer>
+
+</body>
+</html>

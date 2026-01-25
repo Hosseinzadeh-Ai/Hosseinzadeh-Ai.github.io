@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <!-- امنیت: دیوار آتشین مرورگر (CSP) -->
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://fonts.googleapis.com; font-src 'self' https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://fonts.gstatic.com; script-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com; img-src 'self' data:;">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Personal Website | Software Engineer</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- لینک فونت انگلیسی Poppins -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <!-- لینک آیکون‌ها -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- استایل داخلی برای تغییر فونت فقط در نسخه انگلیسی -->
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif !important;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="site-header">
+        <div class="container header-container">
+            <div class="logo"><span class="highlight">Software</span>Engineer</div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="en.html" class="active">Home</a></li>
+                    <!-- نکته: فعلا لینک‌ها به صفحات فارسی می‌روند مگر اینکه about-en.html بسازید -->
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="lang-switch"><a href="index.html" class="btn-lang">فارسی</a></div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero-section">
+        <div class="container hero-container">
+            <div class="hero-content">
+                <span class="hero-subtitle">Hello, I'm AbolfalHossenzadeh</span>
+                <h1>Software Engineer & <br><span class="highlight">AI Specialist</span></h1>
+                <p>I am interested in designing data-driven systems and intelligent models, with the goal of building solutions that are applicable in the real world.</p>
+                <div class="hero-buttons">
+                    <a href="projects.html" class="btn btn-primary">View Projects</a>
+                    <a href="about.html" class="btn btn-outline">About Me</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="glowing-circle"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- NEW: Services Section (Translated) -->
+    <section class="services-section">
+        <div class="container">
+            <h2 class="section-title">My <span class="highlight">Services</span></h2>
+            <div class="services-grid">
+                
+                <!-- Service 1 -->
+                <div class="service-card">
+                    <i class="fas fa-code"></i>
+                    <h3>Web Development</h3>
+                    <p>Designing responsive, fast, and modern websites using the latest technologies.</p>
+                </div>
+
+                <!-- Service 2 -->
+                <div class="service-card">
+                    <i class="fas fa-robot"></i>
+                    <h3>Artificial Intelligence</h3>
+                    <p>Implementing machine learning models, image processing, and intelligent systems.</p>
+                </div>
+
+                <!-- Service 3 -->
+                <div class="service-card">
+                    <i class="fas fa-chart-line"></i>
+                    <h3>Data Analysis</h3>
+                    <p>Extracting knowledge from data and visualizing information for better decision making.</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- NEW: Featured Projects (Translated) -->
+    <section class="featured-projects">
+        <div class="container">
+            <h2 class="section-title">Featured <span class="highlight">Projects</span></h2>
+            
+            <div class="portfolio-grid">
+                
+                <div class="project-card">
+                    <div class="project-image">
+                        <div class="placeholder-img color-1"></div>
+                    </div>
+                    <div class="project-info">
+                        <h3>EdgeBot Robotic Intelligent Agent</h3>
+                        <p>Robot design, robotics training, project production, troubleshooting, programming</p>
+                        <div class="project-links">
+                            <a href="project-detail.html" class="link-btn">View Details</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-image">
+                        <div class="placeholder-img color-2"></div>
+                    </div>
+                    <div class="project-info">
+                        <h3>ElevAI Smart Business Advisor Agent</h3>
+                        <p>Idea analysis, idea validation, business model design, target market analysis</p>
+                        <div class="project-links">
+                            <a href="project-detail.html" class="link-btn">View Details</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- View All Button -->
+            <div style="text-align: center; margin-top: 40px;">
+                <a href="projects.html" class="btn btn-outline">View All Projects <i class="fas fa-arrow-right"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <div class="container contact-container">
+            <div class="contact-info">
+                <h2 class="section-title" style="text-align: left; margin-bottom: 20px;">Get in <span class="highlight">Touch</span></h2>
+                <p>If you have a project in mind or want to chat about AI and Web, feel free to message me.</p>
+                <div class="contact-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span style="margin-right: 10px;">Qom, Iran</span>
+                </div>
+                <div class="social-links">
+                    <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="social-icon"><i class="fab fa-github"></i></a>
+                    <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="social-icon"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://telegram.org" target="_blank" rel="noopener noreferrer" class="social-icon"><i class="fab fa-telegram"></i></a>
+                    <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" class="social-icon"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+            <form class="contact-form" action="https://formspree.io/f/mwvpgeny" method="POST">
+    
+    <!-- 1. Anti-bot Honeypot (Security) -->
+    <input type="text" name="_gotcha" style="display:none">
+
+    <!-- 2. Email Subject Configuration -->
+    <input type="hidden" name="_subject" value="New Message from Portfolio Website">
+
+    <div class="form-group">
+        <input type="text" name="name" placeholder="Your Name" required>
+    </div>
+    
+    <div class="form-group">
+        <input type="email" name="email" placeholder="Your Email" required>
+    </div>
+    
+    <div class="form-group">
+        <textarea name="message" rows="5" placeholder="Your Message..." required></textarea>
+    </div>
+    
+    <button type="submit" class="btn btn-primary" style="width: 100%;">
+        Send Message
+    </button>
+
+    <!-- 3. Privacy Notice -->
+    <p style="font-size: 0.8rem; color: #94a3b8; margin-top: 15px; text-align: center;">
+        <i class="fas fa-lock" style="margin-right: 5px;"></i>
+        Your information is secure and will only be used to respond to you.
+    </p>
+
+</form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <p>© 2026 Designed & Developed by <span class="highlight">AbolfazlHosseinzadeh</span></p>
+        </div>
+    </footer>
+
+</body>
+</html>
