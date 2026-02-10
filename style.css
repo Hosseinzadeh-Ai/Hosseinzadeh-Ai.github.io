@@ -7,12 +7,15 @@
 
 body {
     font-family: 'Vazirmatn', sans-serif;
-    /* رنگ پس‌زمینه تیره (سرمه‌ای خیلی تیره) */
-    background-color: #0f172a; 
-    /* رنگ متن اصلی (سفید مایل به خاکستری) */
+    background-color: #0f172a;
     color: #e2e8f0;
     line-height: 1.6;
     overflow-x: hidden;
+    
+    /* --- کد جدید برای چسباندن فوتر به پایین --- */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* حداقل ارتفاع کل صفحه */
 }
 
 /* کلاس کانتینر برای وسط‌چین کردن محتوا */
@@ -831,4 +834,90 @@ html[dir="ltr"] .section-title {
 .featured-projects {
     padding: 80px 0;
     background-color: #0f172a;
+}
+/* --- استایل‌های وبلاگ --- */
+.blog-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.blog-card {
+    background-color: #1e293b;
+    border-radius: 15px;
+    overflow: hidden;
+    transition: 0.3s;
+    border: 1px solid #334155;
+}
+
+.blog-card:hover {
+    transform: translateY(-5px);
+    border-color: #00d4ff;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+.blog-image {
+    height: 200px;
+    overflow: hidden;
+}
+
+.blog-content {
+    padding: 25px;
+}
+
+.blog-meta {
+    font-size: 0.8rem;
+    color: #94a3b8;
+    margin-bottom: 10px;
+    display: flex;
+    gap: 15px;
+}
+
+.blog-meta i {
+    color: #00d4ff;
+    margin-left: 5px;
+}
+
+.blog-content h3 {
+    margin-bottom: 15px;
+    font-size: 1.2rem;
+}
+
+.blog-content h3 a {
+    color: #fff;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.blog-content h3 a:hover {
+    color: #00d4ff;
+}
+
+.blog-content p {
+    color: #cbd5e1;
+    font-size: 0.95rem;
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+.read-more {
+    color: #00d4ff;
+    font-size: 0.9rem;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.read-more:hover {
+    text-decoration: underline;
+}
+/* --- تنظیمات فوتر چسبان --- */
+/* تمام سکشن‌های اصلی باید رشد کنند تا فضای خالی را پر کنند */
+section, .hero-section, .about-main, .portfolio-section, .contact-section, .blog-list-section, .blog-post-section, .project-detail-section {
+    flex: 1; /* این خط جادویی است! */
+}
+
+/* استایل فوتر (برای اطمینان) */
+.site-footer {
+    margin-top: auto; /* اگر محتوا کم بود، خودت را به پایین هل بده */
+    width: 100%;
 }
