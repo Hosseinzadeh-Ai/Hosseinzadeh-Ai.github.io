@@ -921,3 +921,7 @@ section, .hero-section, .about-main, .portfolio-section, .contact-section, .blog
     margin-top: auto; /* اگر محتوا کم بود، خودت را به پایین هل بده */
     width: 100%;
 }
+/* حذف خط آبی زیر تیتر در بخش تماس */
+.contact-section .section-title::after {
+    display: none; /* مخفی کردن خط */
+}
