@@ -925,3 +925,26 @@ section, .hero-section, .about-main, .portfolio-section, .contact-section, .blog
 .contact-section .section-title::after {
     display: none; /* مخفی کردن خط */
 }
+/* تنظیم اندازه لوگوی هدر */
+.site-logo-img {
+    height: 45px; /* ارتفاع لوگو رو اینجا تنظیم کن */
+    width: auto; /* عرض خودکار */
+    vertical-align: middle; /* برای تراز شدن با منو */
+}
+/* --- استایل فوتر جدید --- */
+.footer-container {
+    display: flex;
+    flex-direction: column; /* لوگو بالا، متن پایین */
+    align-items: center; /* وسط‌چین */
+    gap: 15px; /* فاصله بین لوگو و متن */
+}
+
+.footer-logo img {
+    filter: grayscale(100%); /* لوگو سیاه و سفید شود (شیک‌تر) */
+    transition: 0.3s;
+}
+
+.footer-logo img:hover {
+    filter: grayscale(0%); /* وقتی موس رفت روش، رنگی شود */
+    opacity: 1 !important;
+}
