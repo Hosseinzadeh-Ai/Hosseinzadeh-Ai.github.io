@@ -8,6 +8,19 @@
     <title>AbolfazlHosseinzadeh | Software Engineer & AI Specialist</title>
     <link rel="canonical" href="https://hosseinzadeh-ai.github.io/en.html" />
     <meta name="description" content="Personal website of AbolfazlHosseinzadeh. Software Engineer and AI Specialist. View my portfolio, skills, and contact info.">
+        <!-- Open Graph (برای لینکدین، فیسبوک، تلگرام و واتساپ) -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://hosseinzadeh-ai.github.io/en.html">
+    <meta property="og:title" content="Abolfazl Hosseinzadeh| Software Engineer">
+    <meta property="og:description" content="Designing real-time architectures and developing intelligent artificial intelligence agents. View portfolio and specialized articles.">
+    <meta property="og:image" content="https://hosseinzadeh-ai.github.io/og-en.jpg">
+
+    <!-- Twitter Cards (برای توییتر/X) -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://hosseinzadeh-ai.github.io/en.html">
+    <meta name="twitter:title" content="Abolfazl Hosseinzadeh| Software Engineer">
+    <meta name="twitter:description" content="Designing real-time architectures and developing intelligent artificial intelligence agents. View portfolio and specialized articles.">
+    <meta name="twitter:image" content="https://hosseinzadeh-ai.github.io/og-en.jpg">
      <link rel="icon" type="image/png" href="favicon.png">
     <link rel="stylesheet" href="style.css">
     <!-- لینک فونت انگلیسی Poppins -->
@@ -43,7 +56,11 @@
                     <li><a href="#contact">Contact</a></li>
                 </ul>
             </nav>
-            <div class="lang-switch"><a href="index.html" class="btn-lang">فارسی</a></div>
+            <!-- دکمه تغییر تم (طراحی جدید و زیبا) -->
+<button id="theme-toggle" class="theme-toggle-btn" aria-label="تغییر حالت شب و روز">
+    <i class="fas fa-sun"></i>
+</button>
+            <div class="lang-switch"><a href="index.html" class="btn-lang" aria-label="Switch to Persian language">فارسی</a></div>
         </div>
     </header>
 
@@ -159,10 +176,18 @@
                     <span style="margin-right: 10px;">Qom, Iran</span>
                 </div>
                 <div class="social-links">
-                    <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="social-icon"><i class="fab fa-github"></i></a>
-                    <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="social-icon"><i class="fab fa-linkedin"></i></a>
-                    <a href="https://telegram.org" target="_blank" rel="noopener noreferrer" class="social-icon"><i class="fab fa-telegram"></i></a>
-                    <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" class="social-icon"><i class="fab fa-twitter"></i></a>
+                 <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="My GitHub Profile">
+                 <i class="fab fa-github"></i>
+                  </a>
+                 <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="My LinkedIn Profile">
+                 <i class="fab fa-linkedin"></i>
+                   </a>
+                 <a href="https://telegram.org" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="Contact me on Telegram">
+                 <i class="fab fa-telegram"></i>
+                   </a>
+                 <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="My Twitter Page">
+                 <i class="fab fa-twitter"></i>
+                   </a>
                 </div>
             </div>
             <form class="contact-form" action="https://formspree.io/f/mwvpgeny" method="POST">
@@ -215,6 +240,29 @@
 
     </div>
 </footer>
+<!-- اسکریپت تغییر تم (Dark/Light Mode) -->
+<script>
+    const themeBtn = document.getElementById('theme-toggle');
+    const body = document.body;
+    const icon = themeBtn.querySelector('i');
 
+    // بررسی حافظه مرورگر برای تم قبلی
+    if (localStorage.getItem('theme') === 'light') {
+        body.classList.add('light-mode');
+        icon.classList.replace('fa-sun', 'fa-moon');
+    }
+
+    themeBtn.addEventListener('click', () => {
+        body.classList.toggle('light-mode');
+        
+        if (body.classList.contains('light-mode')) {
+            icon.classList.replace('fa-sun', 'fa-moon');
+            localStorage.setItem('theme', 'light'); // ذخیره در حافظه
+        } else {
+            icon.classList.replace('fa-moon', 'fa-sun');
+            localStorage.setItem('theme', 'dark'); // ذخیره در حافظه
+        }
+    });
+</script>
 </body>
 </html>

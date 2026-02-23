@@ -7,7 +7,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>مهندس نرم افزار و متخصص هوش مصنوعی | ابوالفضل حسین زاده</title>
     <link rel="canonical" href="https://hosseinzadeh-ai.github.io/" />
-    <meta name="description" content="وب‌سایت شخصی ابوالفضل حسین زاده. انجام پروژه‌های هوش مصنوعی، طراحی سایت و برنامه نویسی پایتون. مشاهده رزومه و تماس با من.">
+    <meta name="description" content="وب‌سایت شخصی ابوالفضل حسین زاده. انجام پروژه‌های هوش مصنوعی، توسعه نرم افزار و طراحی وب سایت. مشاهده رزومه و تماس با من.">
+    <!-- Open Graph (برای لینکدین، فیسبوک، تلگرام و واتساپ) -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://hosseinzadeh-ai.github.io/">
+    <meta property="og:title" content="ابوالفضل حسین زاده | مهندس نرم افزار">
+    <meta property="og:description" content="طراحی معماری‌های بلادرنگ و توسعه ایجنت‌های هوشمند. مشاهده نمونه‌کارها و مقالات تخصصی AI.">
+    <meta property="og:image" content="https://hosseinzadeh-ai.github.io/images/og-image.jpg">
+
+    <!-- Twitter Cards (برای توییتر/X) -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://hosseinzadeh-ai.github.io/">
+    <meta name="twitter:title" content="ابوالفضل حسین زاده| مهندس نرم افزار">
+    <meta name="twitter:description" content="طراحی معماری‌های بلادرنگ و توسعه ایجنت‌های هوشمند. مشاهده نمونه‌کارها و مقالات تخصصی AI.">
+    <meta name="twitter:image" content="https://hosseinzadeh-ai.github.io/images/og-image.jpg">
      <link rel="icon" type="image/png" href="favicon.png">
     <link rel="stylesheet" href="style.css">
     <link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css" rel="stylesheet" type="text/css" />
@@ -46,7 +59,13 @@
                     <li><a href="#contact">تماس</a></li>
                 </ul>
             </nav>
-            <div class="lang-switch"><a href="en.html" class="btn-lang">English</a></div>
+            <!-- دکمه تغییر تم -->
+             <!-- دکمه تغییر تم (طراحی جدید و زیبا) -->
+            <button id="theme-toggle" class="theme-toggle-btn" aria-label="تغییر حالت شب و روز">
+            <i class="fas fa-sun"></i>
+            </button>
+
+            <div class="lang-switch"><a href="en.html" class="btn-lang" aria-label="تغییر زبان به انگلیسی">English</a></div>
         </div>
     </header>
 
@@ -164,10 +183,18 @@
                     <span style="margin-right: 10px;">قم، ایران</span>
                 </div>
                 <div class="social-links">
-                    <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="social-icon"><i class="fab fa-github"></i></a>
-                    <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="social-icon"><i class="fab fa-linkedin"></i></a>
-                    <a href="https://telegram.org" target="_blank" rel="noopener noreferrer" class="social-icon"><i class="fab fa-telegram"></i></a>
-                    <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" class="social-icon"><i class="fab fa-twitter"></i></a>
+                     <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="پروفایل گیت‌هاب من">
+                     <i class="fab fa-github"></i>
+                     </a>
+                     <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="پروفایل لینکدین من">
+                      <i class="fab fa-linkedin"></i>
+                     </a>
+                     <a href="https://telegram.org" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="ارتباط با من در تلگرام">
+                       <i class="fab fa-telegram"></i>
+                       </a>
+                      <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="صفحه توییتر من">
+                      <i class="fab fa-twitter"></i>
+                      </a>
                 </div>
             </div>
             <form class="contact-form" action="https://formspree.io/f/mwvpgeny" method="POST">
@@ -224,7 +251,30 @@
         </p>
 
     </div>
-</footer>
+            </footer>
+            <script>
+    const themeBtn = document.getElementById('theme-toggle');
+    const body = document.body;
+    const icon = themeBtn.querySelector('i');
+
+    // بررسی حافظه مرورگر برای تم قبلی
+    if (localStorage.getItem('theme') === 'light') {
+        body.classList.add('light-mode');
+        icon.classList.replace('fa-sun', 'fa-moon');
+    }
+
+    themeBtn.addEventListener('click', () => {
+        body.classList.toggle('light-mode');
+        
+        if (body.classList.contains('light-mode')) {
+            icon.classList.replace('fa-sun', 'fa-moon');
+            localStorage.setItem('theme', 'light'); // ذخیره در حافظه
+        } else {
+            icon.classList.replace('fa-moon', 'fa-sun');
+            localStorage.setItem('theme', 'dark'); // ذخیره در حافظه
+        }
+    });
+</script>
     
 </body>
 </html>

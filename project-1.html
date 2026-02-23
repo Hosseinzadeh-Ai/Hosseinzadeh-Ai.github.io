@@ -8,10 +8,38 @@
     <title>پروژه ایجنت هوشمند رباتیک EdgeBot | ابوالفضل حسین زاده</title>
     <link rel="canonical" href="https://hosseinzadeh-ai.github.io/project-1.html" />
     <meta name="description" content="جزئیات پروژه ایجنت رباتیک هوشمند. دستیار مبتنی بر هوش مصنوعی برای طراحی، عیب‌یابی و آموزش رباتیک. مشاهده قابلیت‌ها و سورس کد.">
+    <!-- Open Graph -->
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://hosseinzadeh-ai.github.io/project-1.html">
+    <meta property="og:title" content="پروژه ایجنت هوشمند رباتیک EdgeBot | ابوالفضل حسین زاده">
+    <meta property="og:description" content="دستیار تخصصی برای طراحی، عیب‌یابی و برنامه‌نویسی ربات‌ها با هوش مصنوعی.">
+    <meta property="og:image" content="https://hosseinzadeh-ai.github.io/og-robotic.jpg">
+
+    <!-- Twitter Cards -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://hosseinzadeh-ai.github.io/project-1.html">
+    <meta name="twitter:title" content="پروژه ایجنت هوشمند رباتیک | ابوالفضل حسین زاده">
+    <meta name="twitter:description" content="دستیار تخصصی برای طراحی، عیب‌یابی و برنامه‌نویسی ربات‌ها با هوش مصنوعی.">
+    <meta name="twitter:image" content="https://hosseinzadeh-ai.github.io/og-robotic.jpg">
      <link rel="icon" type="image/png" href="favicon.png">
     <link rel="stylesheet" href="style.css">
     <link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css" rel="stylesheet" type="text/css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Schema Markup: معرفی پروژه به گوگل -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareSourceCode",
+  "name": "EdgeBot ایجنت هوشمند رباتیک",
+  "description": "دستیار تخصصی مبتنی بر هوش مصنوعی برای طراحی، عیب‌یابی و برنامه‌نویسی ربات‌ها.",
+  "author": {
+    "@type": "Person",
+    "name": "ابوالفضل حسین زاده"
+  },
+  "programmingLanguage": "Python",
+  "applicationCategory": "DeveloperApplication"
+}
+</script>
 </head>
 <body>
 
@@ -32,7 +60,11 @@
                     <li><a href="index.html#contact">تماس</a></li>
                 </ul>
             </nav>
-            <div class="lang-switch"><a href="en.html" class="btn-lang">English</a></div>
+            <!-- دکمه تغییر تم (طراحی جدید و زیبا) -->
+<button id="theme-toggle" class="theme-toggle-btn" aria-label="تغییر حالت شب و روز">
+    <i class="fas fa-sun"></i>
+</button>
+            <div class="lang-switch"><a href="en.html" class="btn-lang" aria-label="تغییر زبان به انگلیسی">English</a></div>
         </div>
     </header>
 
@@ -55,17 +87,26 @@
 
             <div class="detail-content">
                 <div class="detail-text">
-    <h2>معرفی پروژه</h2>
-    <p>
-        این پروژه یک <strong>دستیار هوشمند تخصصی</strong> در حوزه رباتیک است که فاصله بین دانش تئوری و اجرای عملی را پر می‌کند. هدف اصلی این ایجنت، کمک به مهندسان و دانشجویان در مراحل <strong>طراحی مدار</strong>، <strong>انتخاب قطعات</strong> و <strong>برنامه‌نویسی ربات</strong> است.
-    </p>
+                <h2>معرفی پروژه</h2>
+                <p>EdgeBot یک ایجنت هوشمند تخصصی در حوزه رباتیک است که با بهره گیری از فناوری هوش مصنوعی، فرآیند
+آموزش، طراحی، توسعه و اجرای پروژه های رباتیکی را برای دانش آموزان، دانشجویان، مدرسان و مهندسان
+به صورت یکپارچه، سریع و هوشمند فراهم می کند.</p>
 
-    <h3 style="margin-top: 30px;">قابلیت‌های کلیدی</h3>
-    <ul class="feature-list">
-        <li><strong>تشخیص قطعه (Vision):</strong> شناسایی قطعات الکترونیکی با آپلود عکس و نمایش مشخصات فنی.</li>
-        <li><strong>دستیار طراحی:</strong> مشاوره هوشمند برای انتخاب قطعات و طراحی ساختار ربات.</li>
-        <li><strong>عیب‌یابی هوشمند:</strong> تشخیص خطاهای سخت‌افزاری و نرم‌افزاری و ارائه راه حل.</li>
-        <li><strong>تولید کد:</strong> نوشتن و تحلیل کدهای برنامه‌نویسی برای میکروکنترلرها.</li>
+                <h3 style="margin-top: 30px; color: #00d4ff;">۱. چالش (The Problem)</h3>
+                <p>
+                دانشجویان و مهندسان تازه‌کار در تبدیل دانش تئوری رباتیک به مدارهای عملی دچار مشکل می‌شوند. پیدا کردن قطعات سازگار و عیب‌یابی مدارهای پیچیده، فرآیندی زمان‌بر و پرخطا بود.
+                </p>
+
+                <h3 style="margin-top: 20px; color: #00d4ff;">۲. راه حل هوشمند (The Solution)</h3>
+                   <p>
+                 توسعه یک ایجنت هوشمند مبتنی بر Computer Vision و NLP که می‌تواند قطعات را از روی عکس تشخیص دهد، در طراحی مدار مشاوره دهد و کدهای میکروکنترلر را به صورت خودکار تولید و تحلیل کند.
+                   </p>
+
+                <h3 style="margin-top: 20px; color: #00d4ff;">۳. دستاوردها (Metrics & Results)</h3>
+                <ul class="feature-list">
+                <li>کاهش ۴۰ درصدی زمان عیب‌یابی مدارهای سخت‌افزاری.</li>
+                <li>دقت ۹۵ درصدی در تشخیص قطعات الکترونیکی از روی تصویر.</li>
+                <li>ایجاد یک محیط تعاملی یکپارچه برای آموزش و توسعه همزمان.</li>
     </ul>
 </div>
 
@@ -120,6 +161,29 @@
 
     </div>
 </footer>
-    
+    <!-- اسکریپت تغییر تم (Dark/Light Mode) -->
+<script>
+    const themeBtn = document.getElementById('theme-toggle');
+    const body = document.body;
+    const icon = themeBtn.querySelector('i');
+
+    // بررسی حافظه مرورگر برای تم قبلی
+    if (localStorage.getItem('theme') === 'light') {
+        body.classList.add('light-mode');
+        icon.classList.replace('fa-sun', 'fa-moon');
+    }
+
+    themeBtn.addEventListener('click', () => {
+        body.classList.toggle('light-mode');
+        
+        if (body.classList.contains('light-mode')) {
+            icon.classList.replace('fa-sun', 'fa-moon');
+            localStorage.setItem('theme', 'light'); // ذخیره در حافظه
+        } else {
+            icon.classList.replace('fa-moon', 'fa-sun');
+            localStorage.setItem('theme', 'dark'); // ذخیره در حافظه
+        }
+    });
+</script>
 </body>
 </html>

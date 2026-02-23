@@ -8,6 +8,19 @@
     <title>مهندس نرم افزار و متخصص هوش مصنوعی | ابوالفضل درباره حسین زاده</title>
     <link rel="canonical" href="https://hosseinzadeh-ai.github.io/about.html" />
     <meta name="description" content="بیوگرافی و رزومه کاری ابوالفضل حسین زاده. مهندس نرم‌افزار و متخصص در زمینه یادگیری ماشین، پایتون و توسعه وب.">
+    <!-- Open Graph -->
+    <meta property="og:type" content="profile">
+    <meta property="og:url" content="https://hosseinzadeh-ai.github.io/about.html">
+    <meta property="og:title" content="درباره ابوالفضل حسین زاده | مهندس نرم افزار">
+    <meta property="og:description" content="بیوگرافی، مهارت‌ها و فلسفه فکری من در توسعه سیستم‌های هوشمند.">
+    <meta property="og:image" content="https://hosseinzadeh-ai.github.io/og-about.jpg">
+
+    <!-- Twitter Cards -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://hosseinzadeh-ai.github.io/about.html">
+    <meta name="twitter:title" content="درباره ابوالفضل حسین زاده | مهندس نرم افزار">
+    <meta name="twitter:description" content="بیوگرافی، مهارت‌ها و فلسفه فکری من در توسعه سیستم‌های هوشمند.">
+    <meta name="twitter:image" content="https://hosseinzadeh-ai.github.io/og-about.jpg">
      <link rel="icon" type="image/png" href="favicon.png">
     <link rel="stylesheet" href="style.css">
     <link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css" rel="stylesheet" type="text/css" />
@@ -32,7 +45,11 @@
                     <li><a href="index.html#contact">تماس</a></li>
                 </ul>
             </nav>
-            <div class="lang-switch"><a href="en.html" class="btn-lang">English</a></div>
+            <!-- دکمه تغییر تم (طراحی جدید و زیبا) -->
+<button id="theme-toggle" class="theme-toggle-btn" aria-label="تغییر حالت شب و روز">
+    <i class="fas fa-sun"></i>
+</button>
+            <div class="lang-switch"><a href="en.html" class="btn-lang" aria-label="تغییر زبان به انگلیسی">English</a></div>
         </div>
     </header>
 
@@ -70,6 +87,15 @@
                     به همکاری در پروژه‌های هوش مصنوعی، نرم‌افزار، طراحی ایجنت‌ها و توسعه سیستم‌های تحت وب علاقه‌مندم و تلاش می‌کنم راهکارهایی دقیق، قابل توسعه و متناسب با نیاز واقعی پروژه ارائه دهم.
                 </p>
                 <div class="info-list">
+                 <div class="tech-philosophy" style="margin-top: 40px; padding: 25px; background-color: #1e293b; border-right: 4px solid #00d4ff; border-radius: 8px;">
+                <h3 style="color: #fff; margin-bottom: 15px;">
+                <i class="fas fa-lightbulb" style="color: #00d4ff; margin-left: 10px;"></i>
+                  فلسفه من در تکنولوژی
+                </h3>
+                <p style="color: #cbd5e1; font-style: italic; line-height: 1.8; margin: 0;">
+                  "من معتقدم هوش مصنوعی قرار نیست جایگزین انسان‌ها شود، بلکه قرار است توانمندی‌های ما را ارتقا دهد. هدف من ساخت سیستم‌های هوشمندی است که پیچیدگی‌ها را پنهان کرده و تصمیم‌گیری را برای انسان‌ها ساده‌تر، سریع‌تر و دقیق‌تر کنند. تکنولوژی واقعی زمانی شکل می‌گیرد که در خدمت حل مشکلات واقعی باشد."
+                  </p>
+                   </div>
                     <ul>
                         <li><strong>وضعیت:</strong> آماده همکاری</li>
                     </ul>
@@ -116,6 +142,29 @@
 
     </div>
 </footer>
-    
+    <!-- اسکریپت تغییر تم (Dark/Light Mode) -->
+<script>
+    const themeBtn = document.getElementById('theme-toggle');
+    const body = document.body;
+    const icon = themeBtn.querySelector('i');
+
+    // بررسی حافظه مرورگر برای تم قبلی
+    if (localStorage.getItem('theme') === 'light') {
+        body.classList.add('light-mode');
+        icon.classList.replace('fa-sun', 'fa-moon');
+    }
+
+    themeBtn.addEventListener('click', () => {
+        body.classList.toggle('light-mode');
+        
+        if (body.classList.contains('light-mode')) {
+            icon.classList.replace('fa-sun', 'fa-moon');
+            localStorage.setItem('theme', 'light'); // ذخیره در حافظه
+        } else {
+            icon.classList.replace('fa-moon', 'fa-sun');
+            localStorage.setItem('theme', 'dark'); // ذخیره در حافظه
+        }
+    });
+</script>
 </body>
 </html>
