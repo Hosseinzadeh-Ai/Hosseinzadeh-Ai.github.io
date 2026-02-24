@@ -2,9 +2,20 @@
 <html lang="fa" dir="rtl">
 <head>
     <meta charset="UTF-8">
-    <!-- امنیت: دیوار آتشین مرورگر (CSP) -->
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://fonts.googleapis.com; font-src 'self' https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://fonts.gstatic.com; script-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com; img-src 'self' data:;">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- لایه اول: CSP (دیوار آتشین مرورگر - نسخه پیشرفته و سخت‌گیرانه) -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://fonts.googleapis.com; font-src 'self' https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://fonts.gstatic.com; script-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://www.clarity.ms; connect-src 'self' https://w.clarity.ms https://*.clarity.ms https://formspree.io; img-src 'self' data: https://c.clarity.ms;">
+
+    <!-- لایه دوم: X-Frame-Options (ضد دزدی کلیک / Clickjacking) -->
+    <!-- جلوگیری از نمایش سایت شما در داخل یک فریم (iframe) در سایت‌های کلاهبرداری -->
+    <meta http-equiv="X-Frame-Options" content="DENY">
+
+    <!-- لایه سوم: X-Content-Type-Options (ضد دستکاری نوع فایل / MIME Sniffing) -->
+    <!-- جلوگیری از اجرای فایل‌های مخرب جاوااسکریپت که خود را به جای عکس جا زده‌اند -->
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <!-- لایه چهارم: Referrer-Policy (حریم خصوصی کاربران شما) -->
+    <!-- وقتی کاربر از سایت شما به لینکدین یا گیت‌هاب می‌رود، اطلاعات اضافی ارسال نشود -->
+    <meta name="referrer" content="strict-origin-when-cross-origin">
     <title>پروژه ایجنت هوشمند رباتیک EdgeBot | ابوالفضل حسین زاده</title>
     <link rel="canonical" href="https://hosseinzadeh-ai.github.io/project-1.html" />
     <meta name="description" content="جزئیات پروژه ایجنت رباتیک هوشمند. دستیار مبتنی بر هوش مصنوعی برای طراحی، عیب‌یابی و آموزش رباتیک. مشاهده قابلیت‌ها و سورس کد.">
@@ -40,6 +51,13 @@
   "applicationCategory": "DeveloperApplication"
 }
 </script>
+<script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "vmack3er1r");
+</script>
 </head>
 <body>
 
@@ -60,11 +78,13 @@
                     <li><a href="index.html#contact">تماس</a></li>
                 </ul>
             </nav>
-            <!-- دکمه تغییر تم (طراحی جدید و زیبا) -->
-<button id="theme-toggle" class="theme-toggle-btn" aria-label="تغییر حالت شب و روز">
-    <i class="fas fa-sun"></i>
-</button>
-            <div class="lang-switch"><a href="en.html" class="btn-lang" aria-label="تغییر زبان به انگلیسی">English</a></div>
+            <!-- گروه کنترل (تم + زبان) -->
+        <div class="header-controls">
+            <button id="theme-toggle" class="theme-btn" aria-label="تغییر حالت شب و روز">
+                <i class="fas fa-sun"></i>
+            </button>
+            <span class="control-divider"></span>
+            <a href="en.html" class="btn-lang" aria-label="تغییر زبان به انگلیسی">EN</a>
         </div>
     </header>
 
@@ -92,17 +112,17 @@
 آموزش، طراحی، توسعه و اجرای پروژه های رباتیکی را برای دانش آموزان، دانشجویان، مدرسان و مهندسان
 به صورت یکپارچه، سریع و هوشمند فراهم می کند.</p>
 
-                <h3 style="margin-top: 30px; color: #00d4ff;">۱. چالش (The Problem)</h3>
+                <h3 style="margin-top: 30px;"><span class="highlight">۱. چالش (The Problem)</span></h3>
                 <p>
                 دانشجویان و مهندسان تازه‌کار در تبدیل دانش تئوری رباتیک به مدارهای عملی دچار مشکل می‌شوند. پیدا کردن قطعات سازگار و عیب‌یابی مدارهای پیچیده، فرآیندی زمان‌بر و پرخطا بود.
                 </p>
 
-                <h3 style="margin-top: 20px; color: #00d4ff;">۲. راه حل هوشمند (The Solution)</h3>
+                <h3 style="margin-top: 30px;"><span class="highlight">۲. راه حل هوشمند  (The Solution)</span></h3>
                    <p>
                  توسعه یک ایجنت هوشمند مبتنی بر Computer Vision و NLP که می‌تواند قطعات را از روی عکس تشخیص دهد، در طراحی مدار مشاوره دهد و کدهای میکروکنترلر را به صورت خودکار تولید و تحلیل کند.
                    </p>
 
-                <h3 style="margin-top: 20px; color: #00d4ff;">۳. دستاوردها (Metrics & Results)</h3>
+                <h3 style="margin-top: 30px;"><span class="highlight">۳. دستاوردها (Metrics & Results)</span></h3>
                 <ul class="feature-list">
                 <li>کاهش ۴۰ درصدی زمان عیب‌یابی مدارهای سخت‌افزاری.</li>
                 <li>دقت ۹۵ درصدی در تشخیص قطعات الکترونیکی از روی تصویر.</li>

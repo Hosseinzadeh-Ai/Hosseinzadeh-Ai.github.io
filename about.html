@@ -2,9 +2,21 @@
 <html lang="fa" dir="rtl">
 <head>
     <meta charset="UTF-8">
-    <!-- امنیت: دیوار آتشین مرورگر (CSP) -->
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://fonts.googleapis.com; font-src 'self' https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://fonts.gstatic.com; script-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com; img-src 'self' data:;">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- لایه اول: CSP (دیوار آتشین مرورگر - نسخه پیشرفته و سخت‌گیرانه) -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://fonts.googleapis.com; font-src 'self' https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://fonts.gstatic.com; script-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://www.clarity.ms; connect-src 'self' https://w.clarity.ms https://*.clarity.ms https://formspree.io; img-src 'self' data: https://c.clarity.ms;">
+
+    <!-- لایه دوم: X-Frame-Options (ضد دزدی کلیک / Clickjacking) -->
+    <!-- جلوگیری از نمایش سایت شما در داخل یک فریم (iframe) در سایت‌های کلاهبرداری -->
+    <meta http-equiv="X-Frame-Options" content="DENY">
+
+    <!-- لایه سوم: X-Content-Type-Options (ضد دستکاری نوع فایل / MIME Sniffing) -->
+    <!-- جلوگیری از اجرای فایل‌های مخرب جاوااسکریپت که خود را به جای عکس جا زده‌اند -->
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+
+    <!-- لایه چهارم: Referrer-Policy (حریم خصوصی کاربران شما) -->
+    <!-- وقتی کاربر از سایت شما به لینکدین یا گیت‌هاب می‌رود، اطلاعات اضافی ارسال نشود -->
+    <meta name="referrer" content="strict-origin-when-cross-origin">
     <title>مهندس نرم افزار و متخصص هوش مصنوعی | ابوالفضل درباره حسین زاده</title>
     <link rel="canonical" href="https://hosseinzadeh-ai.github.io/about.html" />
     <meta name="description" content="بیوگرافی و رزومه کاری ابوالفضل حسین زاده. مهندس نرم‌افزار و متخصص در زمینه یادگیری ماشین، پایتون و توسعه وب.">
@@ -25,6 +37,13 @@
     <link rel="stylesheet" href="style.css">
     <link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css" rel="stylesheet" type="text/css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "vmack3er1r");
+</script>
 </head>
 <body>
 
@@ -45,11 +64,13 @@
                     <li><a href="index.html#contact">تماس</a></li>
                 </ul>
             </nav>
-            <!-- دکمه تغییر تم (طراحی جدید و زیبا) -->
-<button id="theme-toggle" class="theme-toggle-btn" aria-label="تغییر حالت شب و روز">
-    <i class="fas fa-sun"></i>
-</button>
-            <div class="lang-switch"><a href="en.html" class="btn-lang" aria-label="تغییر زبان به انگلیسی">English</a></div>
+            <!-- گروه کنترل (تم + زبان) -->
+        <div class="header-controls">
+            <button id="theme-toggle" class="theme-btn" aria-label="تغییر حالت شب و روز">
+                <i class="fas fa-sun"></i>
+            </button>
+            <span class="control-divider"></span>
+            <a href="en.html" class="btn-lang" aria-label="تغییر زبان به انگلیسی">EN</a>
         </div>
     </header>
 
