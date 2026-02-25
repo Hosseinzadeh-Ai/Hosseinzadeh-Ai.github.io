@@ -4,6 +4,23 @@
     padding: 0;
     box-sizing: border-box;
 }
+/* --- اسکرول نرم کل سایت --- */
+html {
+    scroll-behavior: smooth;
+}
+
+/* --- رنگ اختصاصی هنگام انتخاب متن (Highlight) --- */
+/* حالت تاریک (نئونی) */
+::selection {
+    background-color: #00d4ff;
+    color: #0f172a;
+}
+
+/* حالت روشن (آبی سلطنتی) */
+body.light-mode ::selection {
+    background-color: #2563eb;
+    color: #ffffff;
+}
 
 body {
     font-family: 'Vazirmatn', sans-serif;
