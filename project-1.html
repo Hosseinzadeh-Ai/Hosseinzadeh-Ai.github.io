@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- لایه اول: CSP (دیوار آتشین مرورگر - نسخه پیشرفته و سخت‌گیرانه) -->
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://fonts.googleapis.com; font-src 'self' https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://fonts.gstatic.com; script-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://www.clarity.ms; connect-src 'self' https://w.clarity.ms https://*.clarity.ms https://formspree.io; img-src 'self' data: https://c.clarity.ms;">
+   <!-- امنیت: دیوار آتشین مرورگر (با دسترسی باز برای مایکروسافت کلریتی و فرم تماس) -->
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://fonts.googleapis.com; font-src 'self' https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://fonts.gstatic.com; script-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://www.clarity.ms; connect-src 'self' https://w.clarity.ms https://*.clarity.ms https://formspree.io; img-src 'self' data: https://c.clarity.ms;">
 
     <!-- لایه دوم: X-Frame-Options (ضد دزدی کلیک / Clickjacking) -->
     <!-- جلوگیری از نمایش سایت شما در داخل یک فریم (iframe) در سایت‌های کلاهبرداری -->
