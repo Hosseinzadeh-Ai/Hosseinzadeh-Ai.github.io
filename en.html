@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- امنیت: دیوار آتشین مرورگر (با دسترسی باز برای مایکروسافت کلریتی و فرم تماس) -->
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://fonts.googleapis.com; font-src 'self' https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://fonts.gstatic.com; script-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://www.clarity.ms; connect-src 'self' https://w.clarity.ms https://*.clarity.ms https://formspree.io; img-src 'self' data: https://c.clarity.ms;">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://fonts.googleapis.com; font-src 'self' https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://fonts.gstatic.com; script-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://www.clarity.ms https://c.clarity.ms; connect-src 'self' https://w.clarity.ms https://*.clarity.ms https://formspree.io; img-src 'self' data: https://c.clarity.ms;">
 
     <!-- لایه دوم: X-Frame-Options (ضد دزدی کلیک / Clickjacking) -->
     <!-- جلوگیری از نمایش سایت شما در داخل یک فریم (iframe) در سایت‌های کلاهبرداری -->
@@ -286,33 +286,31 @@
     });
 </script>
 <!-- Cookie Consent Banner (GDPR) -->
-    <div id="cookie-consent" style="position: fixed; bottom: -100px; left: 0; width: 100%; background-color: rgba(15, 23, 42, 0.95); backdrop-filter: blur(10px); border-top: 1px solid #1e293b; padding: 15px 20px; display: flex; justify-content: space-between; align-items: center; z-index: 9999; transition: bottom 0.5s ease; box-shadow: 0 -5px 20px rgba(0,0,0,0.5); flex-direction: row;">
-        <p style="color: #cbd5e1; font-size: 0.9rem; margin: 0; flex: 1; text-align: left;">
-            <i class="fas fa-cookie-bite" style="color: #00d4ff; margin-right: 8px;"></i>
-            This website uses cookies to enhance your browsing experience and analyze site traffic. By continuing to use this site, you consent to our use of cookies.
+ <div id="cookie-consent" class="cookie-banner">
+        <p>
+            <i class="fas fa-cookie-bite" style="color: #00d4ff; margin-left: 8px;"></i>
+                 This website uses cookies to enhance your browsing experience and analyze site traffic. By continuing to use this site, you consent to our use of cookies.
         </p>
-        <button id="accept-cookies" class="btn btn-primary" style="padding: 8px 20px; font-size: 0.9rem; margin-left: 20px; white-space: nowrap;">
+        <button id="accept-cookies" class="btn btn-primary">
             Got it!
         </button>
     </div>
 
-    <!-- Cookie Banner Script -->
+    <!-- اسکریپت کنترل نوار کوکی -->
     <script>
         document.addEventListener("DOMContentLoaded", function() {
             const cookieBanner = document.getElementById('cookie-consent');
             const acceptBtn = document.getElementById('accept-cookies');
 
-            // Show banner with animation if not accepted yet
             if (!localStorage.getItem('cookiesAccepted')) {
                 setTimeout(() => {
-                    cookieBanner.style.bottom = '0';
-                }, 1000); // Appears after 1 second
+                    cookieBanner.classList.add('show');
+                }, 1000);
             }
 
-            // Save to localStorage and hide banner on click
             acceptBtn.addEventListener('click', function() {
                 localStorage.setItem('cookiesAccepted', 'true');
-                cookieBanner.style.bottom = '-100px';
+                cookieBanner.classList.remove('show');
             });
         });
     </script>

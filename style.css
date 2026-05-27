@@ -70,11 +70,35 @@ ul {
     align-items: center;
 }
 
-/* استایل لوگو */
-.logo {
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: #fff;
+/* --- اصلاح استایل لوگو --- */
+.logo a {
+    color: #e2e8f0; /* رنگ پیش‌فرض (خاموش) */
+    text-decoration: none;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+}
+
+/* افکت روشن شدن فقط هنگام هاور (لمس) */
+.logo a:hover {
+    color: #00d4ff; /* رنگ روشن/نئونی */
+    text-shadow: 0 0 10px rgba(0, 212, 255, 0.5); /* درخشش نئونی */
+}
+
+/* جلوگیری از تاثیر کلاس active روی لوگو */
+.logo a.active {
+    color: #e2e8f0; 
+}
+
+/* استایل عکس لوگو (اگر عکس گذاشتی) */
+.logo img {
+    height: 40px;
+    transition: all 0.3s ease;
+}
+
+.logo a:hover img {
+    transform: scale(1.05); /* عکس لوگو کمی بزرگ می‌شود */
+    filter: drop-shadow(0 0 8px rgba(0, 212, 255, 0.6)); /* درخشش دور عکس */
 }
 
 /* رنگ نئونی فیروزه‌ای برای کلمات خاص */
@@ -1215,4 +1239,77 @@ body.light-mode .btn-lang {
 body.light-mode .theme-btn:hover,
 body.light-mode .btn-lang:hover {
     color: #2563eb !important;
+}
+/* =========================================
+   استایل نوار کوکی (Cookie Consent) - اصلاح شده
+   ========================================= */
+.cookie-banner {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(15, 23, 42, 0.95);
+    backdrop-filter: blur(10px);
+    border-top: 1px solid #1e293b;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 9999;
+    box-shadow: 0 -5px 20px rgba(0,0,0,0.5);
+    
+    /* انیمیشن هوشمند: کادر را به اندازه ارتفاع خودش می‌برد پایین */
+    transform: translateY(100%); 
+    transition: transform 0.5s ease-in-out;
+}
+
+/* کلاسی که با جاوااسکریپت اضافه می‌شود تا نوار بالا بیاید */
+.cookie-banner.show {
+    /* کادر را برمی‌گرداند سر جای اصلی‌اش (کامل بالا می‌آید) */
+    transform: translateY(0); 
+}
+
+.cookie-banner p {
+    color: #cbd5e1;
+    font-size: 0.9rem;
+    margin: 0;
+    flex: 1;
+    line-height: 1.6;
+}
+
+.cookie-banner button {
+    padding: 8px 20px;
+    font-size: 0.9rem;
+    margin-right: 20px;
+    white-space: nowrap;
+}
+
+/* --- تنظیمات برای موبایل --- */
+@media (max-width: 768px) {
+    .cookie-banner {
+        flex-direction: column;
+        text-align: center;
+        padding: 20px;
+        /* کمی فاصله از پایین برای گوشی‌هایی که نوار ناوبری دارند */
+        padding-bottom: 30px; 
+    }
+
+    .cookie-banner p {
+        margin-bottom: 15px;
+    }
+
+    .cookie-banner button {
+        margin-right: 0;
+        width: 100%;
+    }
+}
+
+/* --- تنظیمات برای حالت روشن (Light Mode) --- */
+body.light-mode .cookie-banner {
+    background-color: rgba(255, 255, 255, 0.95);
+    border-top: 1px solid #e2e8f0;
+}
+
+body.light-mode .cookie-banner p {
+    color: #475569;
 }
