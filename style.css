@@ -1313,3 +1313,38 @@ body.light-mode .cookie-banner {
 body.light-mode .cookie-banner p {
     color: #475569;
 }
+/* =========================================
+   استایل مخصوص پرینت (برای استخدام کنندگان)
+   ========================================= */
+@media print {
+    body {
+        background-color: #ffffff !important;
+        color: #000000 !important;
+        font-size: 12pt !important;
+    }
+    
+    /* مخفی کردن بخش‌های اضافی در نسخه چاپی */
+    .site-header, 
+    .header-controls, 
+    .hamburger-btn, 
+    .theme-btn, 
+    .site-footer, 
+    .action-buttons,
+    .back-link,
+    #cookie-consent {
+        display: none !important;
+    }
+
+    /* بهینه‌سازی کادرها برای چاپ روی کاغذ سفید */
+    .about-main, .skills-section {
+        background-color: #ffffff !important;
+        padding: 20px 0 !important;
+    }
+
+    .skill-card, .tech-philosophy {
+        background-color: #ffffff !important;
+        border: 1px solid #000000 !important;
+        color: #000000 !important;
+        box-shadow: none !important;
+    }
+}
