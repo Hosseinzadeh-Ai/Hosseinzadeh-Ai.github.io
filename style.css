@@ -1348,3 +1348,38 @@ body.light-mode .cookie-banner p {
         box-shadow: none !important;
     }
 }
+/* --- استایل لوکس و نئونی برای نوار اسکرول مرورگر --- */
+/* عرض نوار اسکرول */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+/* رنگ پس‌زمینه نوار اسکرول */
+::-webkit-scrollbar-track {
+    background: #0f172a;
+}
+body.light-mode ::-webkit-scrollbar-track {
+    background: #f1f5f9;
+}
+
+/* رنگ خودِ دستگیره اسکرول */
+::-webkit-scrollbar-thumb {
+    background: #1e293b;
+    border-radius: 10px;
+    border: 2px solid #0f172a;
+    transition: 0.3s;
+}
+
+/* رنگ دستگیره اسکرول هنگام هاور یا حرکت */
+::-webkit-scrollbar-thumb:hover {
+    background: #00d4ff; /* درخشش نئونی در حالت تاریک */
+    box-shadow: 0 0 10px #00d4ff;
+}
+
+body.light-mode ::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+    border: 2px solid #f1f5f9;
+}
+body.light-mode ::-webkit-scrollbar-thumb:hover {
+    background: #2563eb; /* آبی سلطنتی در حالت روشن */
+}
