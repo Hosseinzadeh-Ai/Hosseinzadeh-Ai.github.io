@@ -1383,3 +1383,182 @@ body.light-mode ::-webkit-scrollbar-thumb {
 body.light-mode ::-webkit-scrollbar-thumb:hover {
     background: #2563eb; /* آبی سلطنتی در حالت روشن */
 }
+/* =========================================
+   اصلاح استایل جدول‌ها (Tables) در تم دارک و لایت
+   ========================================= */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 25px 0;
+    color: #e2e8f0; /* رنگ متن سفید در حالت دارک */
+    font-size: 0.95rem;
+}
+
+th, td {
+    padding: 12px 15px;
+    border: 1px solid #334155; /* خطوط مرزی تیره */
+    text-align: right;
+}
+
+th {
+    background-color: #1e293b; /* پس‌زمینه تیره سرستون */
+    color: #00d4ff; /* رنگ فیروزه‌ای سرستون */
+    font-weight: bold;
+}
+
+/* افکت هاور ملایم در حالت دارک (بدون تغییر رنگ متن) */
+tr:hover, tr:active {
+    background-color: rgba(255, 255, 255, 0.05) !important;
+}
+
+/* --- استایل جدول در حالت روشن (Light Mode) --- */
+body.light-mode table {
+    color: #334155 !important; /* متن تیره در حالت لایت */
+}
+
+body.light-mode th, 
+body.light-mode td {
+    border-color: #cbd5e1 !important; /* خطوط مرزی روشن */
+}
+
+body.light-mode th {
+    background-color: #f1f5f9 !important;
+    color: #2563eb !important; /* آبی سلطنتی سرستون */
+}
+
+body.light-mode tr:hover, 
+body.light-mode tr:active {
+    background-color: rgba(0, 0, 0, 0.02) !important; /* هاور ملایم لایت */
+}
+
+
+/* =========================================
+   اصلاح استایل بخش سوالات متداول (FAQ)
+   ========================================= */
+/* فرض می‌کنیم ایجنت از تگ‌های استاندارد details و summary استفاده می‌کند */
+details {
+    background-color: #1e293b;
+    border: 1px solid #334155;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    padding: 15px;
+    color: #cbd5e1;
+    transition: 0.3s;
+}
+
+summary {
+    color: #ffffff;
+    font-weight: bold;
+    cursor: pointer;
+    outline: none;
+    list-style: none; /* حذف فلش پیش‌فرض */
+}
+
+summary:hover {
+    color: #00d4ff;
+}
+
+/* --- استایل FAQ در حالت روشن (Light Mode) --- */
+body.light-mode details {
+    background-color: #ffffff !important;
+    border-color: #e2e8f0 !important;
+    color: #475569 !important;
+}
+
+body.light-mode summary {
+    color: #0f172a !important;
+}
+
+body.light-mode summary:hover {
+    color: #2563eb !important;
+}
+/* =========================================
+   استایل کادرهای پیام (Callout Boxes) در وبلاگ
+   ========================================= */
+
+/* کلاس پایه کادر پیام */
+.alert-box {
+    margin: 30px 0;
+    padding: 20px;
+    border-radius: 8px;
+    background-color: #1e293b; /* پس‌زمینه تیره تگ‌های پیش‌فرض */
+    color: #e2e8f0;
+    /* این خط جادویی جهت خط رنگی را بر اساس فارسی/انگلیسی خودکار تراز می‌کند */
+    border-inline-start: 4px solid transparent; 
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+/* ۱. کادر نکته مهم (آبی فیروزه‌ای نئونی) */
+.alert-box.alert-info {
+    background-color: rgba(0, 212, 255, 0.05); /* پس‌زمینه خیلی ملایم فیروزه‌ای */
+    border-inline-start-color: #00d4ff; /* خط نئونی فیروزه‌ای */
+}
+.alert-box.alert-info h4 {
+    color: #00d4ff;
+    margin: 0;
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* ۲. کادر هشدار (نارنجی نئونی) */
+.alert-box.alert-warning {
+    background-color: rgba(249, 115, 22, 0.05);
+    border-inline-start-color: #f97316; /* خط نارنجی */
+}
+.alert-box.alert-warning h4 {
+    color: #f97316;
+    margin: 0;
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* ۳. کادر اشتباه رایج (قرمز نئونی) */
+.alert-box.alert-danger {
+    background-color: rgba(239, 68, 68, 0.05);
+    border-inline-start-color: #ef4444; /* خط قرمز */
+}
+.alert-box.alert-danger h4 {
+    color: #ef4444;
+    margin: 0;
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+
+/* --- استایل کادرهای پیام در حالت روشن (Light Mode) --- */
+/* تغییر رنگ پس‌زمینه و متون به رنگ‌های ملایم و خوانا در روز */
+
+body.light-mode .alert-box.alert-info {
+    background-color: #f0f9ff !important; /* آبی ملایم */
+    border-inline-start-color: #0ea5e9 !important;
+    color: #334155 !important;
+}
+body.light-mode .alert-box.alert-info h4 {
+    color: #0369a1 !important;
+}
+
+body.light-mode .alert-box.alert-warning {
+    background-color: #fff7ed !important; /* نارنجی ملایم */
+    border-inline-start-color: #f97316 !important;
+    color: #334155 !important;
+}
+body.light-mode .alert-box.alert-warning h4 {
+    color: #c2410c !important;
+}
+
+body.light-mode .alert-box.alert-danger {
+    background-color: #fef2f2 !important; /* قرمز ملایم */
+    border-inline-start-color: #ef4444 !important;
+    color: #334155 !important;
+}
+body.light-mode .alert-box.alert-danger h4 {
+    color: #b91c1c !important;
+}
