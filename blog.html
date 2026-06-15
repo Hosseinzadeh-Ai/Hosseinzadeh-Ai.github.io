@@ -35,7 +35,8 @@
     <link rel="icon" href="favicon.ico">
     <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
     <link rel="stylesheet" href="style.css">
-    <link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css" rel="stylesheet" type="text/css" />
+    <!-- فونت جدید و صمیمی شبنم -->
+<link href="https://cdn.jsdelivr.net/gh/rastikerdar/shabnam@v5.0.2/dist/font-face.css" rel="stylesheet" type="text/css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     
     <!-- امنیت -->
@@ -110,22 +111,55 @@
         </div>
     </section>
 
-    <!-- فوتر -->
-     <footer class="site-footer">
-    <div class="container footer-container">
-        
-        <!-- لوگوی فوتر (کمی بزرگتر و کم‌رنگ‌تر) -->
-        <div class="footer-logo">
-            <img src="logo-header.png" alt="لوگوی فوتر" style="height: 40px; opacity: 0.7;">
+    
+     <!-- فوتر انسانی و شخصی‌سازی شده (فارسی) -->
+    <footer class="site-footer" style="padding: 60px 0 20px; background-color: #0b1120; border-top: 1px solid #1e293b; margin-top: 50px;">
+        <div class="container">
+            <div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 30px; margin-bottom: 40px;">
+                
+                <!-- بخش اول: شعار شخصی و لوگو -->
+                <div style="flex: 1; min-width: 250px;">
+                    <div class="logo" style="margin-bottom: 15px;">
+                        <a href="index.html" style="display: inline-block;">
+                            <img src="logo-header.png" alt="لوگوی ابوالفضل حسین زاده" style="height: 35px; vertical-align: middle;">
+                        </a>
+                    </div>
+                    <p style="color: #94a3b8; font-size: 0.95rem; line-height: 1.8;">
+                        من معتقدم کدهای خوب فقط کار نمی‌کنند، بلکه داستانی از نظم و تفکر را روایت می‌کنند. بیایید با هم آینده را بسازیم.
+                    </p>
+                </div>
+
+                <!-- بخش دوم: لینک‌های سریع -->
+                <div style="flex: 1; min-width: 200px;">
+                    <h4 style="color: #fff; margin-bottom: 20px; font-size: 1.1rem;">مسیرهای سریع</h4>
+                    <ul style="list-style: none; padding: 0; margin: 0; line-height: 2;">
+                        <li><a href="about.html" style="color: #94a3b8; text-decoration: none; transition: 0.3s;" onmouseover="this.style.color='#00d4ff'" onmouseout="this.style.color='#94a3b8'">داستان من</a></li>
+                        <li><a href="projects.html" style="color: #94a3b8; text-decoration: none; transition: 0.3s;" onmouseover="this.style.color='#00d4ff'" onmouseout="this.style.color='#94a3b8'">کارهایی که کرده‌ام</a></li>
+                        <li><a href="blog.html" style="color: #94a3b8; text-decoration: none; transition: 0.3s;" onmouseover="this.style.color='#00d4ff'" onmouseout="this.style.color='#94a3b8'">یادداشت‌های فنی</a></li>
+                    </ul>
+                </div>
+
+                <!-- بخش سوم: ارتباط -->
+                <div style="flex: 1; min-width: 200px;">
+                    <h4 style="color: #fff; margin-bottom: 20px; font-size: 1.1rem;">در تماس باشیم</h4>
+                    <p style="color: #94a3b8; font-size: 0.95rem; margin-bottom: 15px;">
+                        سریع‌ترین راه ارتباطی با من از طریق شبکه‌های اجتماعی زیر است:
+                    </p>
+                    <div class="social-links" style="margin-top: 0;">
+                        <a href="#" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="گیت‌هاب"><i class="fab fa-github"></i></a>
+                        <a href="#" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="لینکدین"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- کپی‌رایت -->
+            <div style="text-align: center; border-top: 1px solid #1e293b; padding-top: 20px;">
+                <p style="margin: 0; font-size: 0.85rem; color: #64748b;">
+                    © 2026 طراحی شده با <i class="fas fa-heart" style="color: #ef4444; margin: 0 5px;"></i> و <i class="fas fa-coffee" style="color: #d97706; margin: 0 5px;"></i> توسط <span class="highlight">ابوالفضل حسین زاده</span>
+                </p>
+            </div>
         </div>
-
-        <!-- متن کپی‌رایت -->
-        <p class="copyright">
-            © 2026 طراحی و توسعه توسط <span class="highlight">ابوالفضل حسین زاده</span>
-        </p>
-
-    </div>
-</footer>
+    </footer>
     <!-- اسکریپت تغییر تم (Dark/Light Mode) -->
 <script>
     const themeBtn = document.getElementById('theme-toggle');

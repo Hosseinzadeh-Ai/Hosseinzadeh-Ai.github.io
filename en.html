@@ -116,7 +116,7 @@
     <!-- NEW: Services Section (Translated) -->
     <section class="services-section">
         <div class="container">
-            <h2 class="section-title">My <span class="highlight">Services</span></h2>
+            <h2>How can I <span class="highlight">help your project?</span></h2>
             <div class="services-grid">
                 
                 <!-- Service 1 -->
@@ -147,7 +147,7 @@
     <!-- NEW: Featured Projects (Translated) -->
     <section class="featured-projects">
         <div class="container">
-            <h2 class="section-title">Featured <span class="highlight">Projects</span></h2>
+            <h2>Work I've recently <span class="highlight">put my time into</span></h2>
             
             <div class="portfolio-grid">
                 
@@ -190,7 +190,7 @@
     <section id="contact" class="contact-section">
         <div class="container contact-container">
             <div class="contact-info">
-                <h2 class="section-title" style="text-align: left; margin-bottom: 20px;">Get in <span class="highlight">Touch</span></h2>
+                <h2>Let's start a <span class="highlight">real conversation</span></h2>
                 <p>If you have a project in mind or want to chat about AI and Web, feel free to message me.</p>
                 <div class="contact-item">
                     <i class="fas fa-map-marker-alt"></i>
@@ -211,56 +211,84 @@
                    </a>
                 </div>
             </div>
+            <!-- English Contact form>
+             
+            </form> -->
             <form class="contact-form" action="https://formspree.io/f/mwvpgeny" method="POST">
-    
-    <!-- 1. Anti-bot Honeypot (Security) -->
-    <input type="text" name="_gotcha" style="display:none">
+                
+                <input type="text" name="_gotcha" style="display:none">
+                <input type="hidden" name="_subject" value="New Message from Portfolio Website">
 
-    <!-- 2. Email Subject Configuration -->
-    <input type="hidden" name="_subject" value="New Message from Portfolio Website">
+                <div class="form-group">
+                    <input type="text" name="name" placeholder="What should I call you?" required>
+                </div>
+                <div class="form-group">
+                    <input type="email" name="email" placeholder="Your email address (e.g., name@domain.com)" required>
+                </div>
+                <div class="form-group">
+                    <textarea name="message" rows="5" placeholder="Tell me about your project; what's on your mind?..." required></textarea>
+                </div>
+                
+                <button type="submit" class="btn btn-primary" style="width: 100%;">
+                    Send Message to AbolfazlHosseinzadeh
+                </button>
 
-    <div class="form-group">
-        <input type="text" name="name" placeholder="Your Name" required>
-    </div>
-    
-    <div class="form-group">
-        <input type="email" name="email" placeholder="Your Email" required>
-    </div>
-    
-    <div class="form-group">
-        <textarea name="message" rows="5" placeholder="Your Message..." required></textarea>
-    </div>
-    
-    <button type="submit" class="btn btn-primary" style="width: 100%;">
-        Send Message
-    </button>
-
-    <!-- 3. Privacy Notice -->
-    <p style="font-size: 0.8rem; color: #94a3b8; margin-top: 15px; text-align: center;">
-        <i class="fas fa-lock" style="margin-right: 5px;"></i>
-        Your information is secure and will only be used to respond to you.
-    </p>
-
-</form>
+                <p style="font-size: 0.8rem; color: #94a3b8; margin-top: 15px; text-align: center;">
+                    <i class="fas fa-lock" style="margin-right: 5px;"></i>
+                    Your privacy is respected. I usually reply within 24 hours.
+                </p>
+            </form>
         </div>
     </section>
 
-    <!-- Footer -->
-     <footer class="site-footer">
-    <div class="container footer-container">
-        
-        <!-- لوگوی فوتر (کمی بزرگتر و کم‌رنگ‌تر) -->
-        <div class="footer-logo">
-            <img src="logo-header.png" alt="لوگوی فوتر" style="height: 40px; opacity: 0.7;">
+    <!-- English Footer -->
+    <footer class="site-footer" style="padding: 60px 0 20px; background-color: #0b1120; border-top: 1px solid #1e293b; margin-top: 50px;">
+        <div class="container">
+            <div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 30px; margin-bottom: 40px; text-align: left;">
+                
+                <!-- Section 1: Tagline & Logo -->
+                <div style="flex: 1; min-width: 250px;">
+                    <div class="logo" style="margin-bottom: 15px;">
+                        <a href="en.html" style="display: inline-block;">
+                            <img src="logo-header.png" alt="AbolfazlHosseinzadeh Logo" style="height: 35px; vertical-align: middle;">
+                        </a>
+                    </div>
+                    <p style="color: #94a3b8; font-size: 0.95rem; line-height: 1.8;">
+                        I believe good code doesn't just work; it tells a story of logic and care. Let's build the future together.
+                    </p>
+                </div>
+
+                <!-- Section 2: Quick Links (اصلاح شده) -->
+                <div style="flex: 1; min-width: 200px;">
+                    <h4 style="color: #fff; margin-bottom: 20px; font-size: 1.1rem;">Quick Links</h4>
+                    <ul style="list-style: none; padding: 0; margin: 0; line-height: 2;">
+                        <li><a href="about-en.html" style="color: #94a3b8; text-decoration: none; transition: 0.3s;" onmouseover="this.style.color='#00d4ff'" onmouseout="this.style.color='#94a3b8'">My Story</a></li>
+                        <li><a href="projects.html" style="color: #94a3b8; text-decoration: none; transition: 0.3s;" onmouseover="this.style.color='#00d4ff'" onmouseout="this.style.color='#94a3b8'">What I've Built</a></li>
+                        <li><a href="blog.html" style="color: #94a3b8; text-decoration: none; transition: 0.3s;" onmouseover="this.style.color='#00d4ff'" onmouseout="this.style.color='#94a3b8'">Tech Notes</a></li>
+                    </ul>
+                </div>
+
+                <!-- Section 3: Contact -->
+                <div style="flex: 1; min-width: 200px;">
+                    <h4 style="color: #fff; margin-bottom: 20px; font-size: 1.1rem;">Get in Touch</h4>
+                    <p style="color: #94a3b8; font-size: 0.95rem; margin-bottom: 15px;">
+                        The fastest way to reach me is through my professional networks:
+                    </p>
+                    <div class="social-links" style="margin-top: 0; justify-content: flex-start;">
+                        <a href="#" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                        <a href="#" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Copyright -->
+            <div style="text-align: center; border-top: 1px solid #1e293b; padding-top: 20px;">
+                <p style="margin: 0; font-size: 0.85rem; color: #64748b;">
+                    © 2026 Crafted with <i class="fas fa-heart" style="color: #ef4444; margin: 0 5px;"></i> and <i class="fas fa-coffee" style="color: #d97706; margin: 0 5px;"></i> by <span class="highlight">AbolfazlHosseinzadeh</span>
+                </p>
+            </div>
         </div>
-
-        <!-- متن کپی‌رایت -->
-        <p class="copyright">
-            © 2026 Designed & Developed by <span class="highlight">Abolfazl Hosseinzadeh</span>
-        </p>
-
-    </div>
-</footer>
+    </footer>
 <!-- اسکریپت تغییر تم (Dark/Light Mode) -->
 <script>
     const themeBtn = document.getElementById('theme-toggle');

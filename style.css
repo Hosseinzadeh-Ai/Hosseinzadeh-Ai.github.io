@@ -1,9 +1,9 @@
-/* تنظیمات کلی و ریست کردن مرورگر */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
+
 /* --- اسکرول نرم کل سایت --- */
 html {
     scroll-behavior: smooth;
@@ -22,19 +22,19 @@ body.light-mode ::selection {
     color: #ffffff;
 }
 
+/* تنظیمات بدنه اصلی (فونت شبنم + چسباندن فوتر به پایین) */
 body {
-    font-family: 'Vazirmatn', sans-serif;
-    background-color: #0f172a;
+    font-family: 'Shabnam', sans-serif; /* فونت شبنم */
+    background-color: #0f172a; 
     color: #e2e8f0;
     line-height: 1.6;
     overflow-x: hidden;
     
-    /* --- کد جدید برای چسباندن فوتر به پایین --- */
+    /* کدهای چسباندن فوتر به پایین (که داخل بدنه ادغام شدند) */
     display: flex;
     flex-direction: column;
     min-height: 100vh; /* حداقل ارتفاع کل صفحه */
 }
-
 /* کلاس کانتینر برای وسط‌چین کردن محتوا */
 .container {
     max-width: 1100px;
@@ -70,35 +70,42 @@ ul {
     align-items: center;
 }
 
-/* --- اصلاح استایل لوگو --- */
+/* --- اصلاح استایل لوگو (هدر و فوتر) --- */
 .logo a {
-    color: #e2e8f0; /* رنگ پیش‌فرض (خاموش) */
+    color: #e2e8f0;
     text-decoration: none;
     transition: all 0.3s ease;
     display: flex;
     align-items: center;
 }
 
-/* افکت روشن شدن فقط هنگام هاور (لمس) */
 .logo a:hover {
-    color: #00d4ff; /* رنگ روشن/نئونی */
-    text-shadow: 0 0 10px rgba(0, 212, 255, 0.5); /* درخشش نئونی */
+    color: #00d4ff;
+    text-shadow: 0 0 10px rgba(0, 212, 255, 0.5);
 }
 
-/* جلوگیری از تاثیر کلاس active روی لوگو */
-.logo a.active {
-    color: #e2e8f0; 
-}
-
-/* استایل عکس لوگو (اگر عکس گذاشتی) */
+/* استایل عکس لوگو در هدر */
 .logo img {
     height: 40px;
     transition: all 0.3s ease;
 }
 
-.logo a:hover img {
-    transform: scale(1.05); /* عکس لوگو کمی بزرگ می‌شود */
-    filter: drop-shadow(0 0 8px rgba(0, 212, 255, 0.6)); /* درخشش دور عکس */
+/* استایل عکس لوگو در فوتر (کمی کوچکتر) */
+.site-footer .logo img {
+    height: 35px;
+}
+
+/* افکت درخشش و بزرگ‌نمایی برای هر دو لوگو هنگام هاور */
+.logo a:hover img,
+.site-footer .logo a:hover img {
+    transform: scale(1.05);
+    filter: drop-shadow(0 0 8px rgba(0, 212, 255, 0.6));
+}
+
+/* --- تنظیمات لوگو در حالت روشن (Light Mode) --- */
+body.light-mode .logo a:hover img,
+body.light-mode .site-footer .logo a:hover img {
+    filter: drop-shadow(0 0 8px rgba(37, 99, 235, 0.4)); /* درخشش آبی سلطنتی در روز */
 }
 
 /* رنگ نئونی فیروزه‌ای برای کلمات خاص */
@@ -531,7 +538,7 @@ input, textarea {
     border: 1px solid #334155;
     border-radius: 8px;
     color: #fff;
-    font-family: 'Vazirmatn', sans-serif;
+    font-family: 'Shabnam', sans-serif;
     font-size: 1rem;
     outline: none;
     transition: 0.3s;
@@ -1561,4 +1568,68 @@ body.light-mode .alert-box.alert-danger {
 }
 body.light-mode .alert-box.alert-danger h4 {
     color: #b91c1c !important;
+}
+/* --- اصلاح نهایی و فوق‌امنیتی رنگ هایلایت‌ها در حالت روشن --- */
+body.light-mode .highlight,
+body.light-mode * .highlight,
+body.light-mode h1 .highlight,
+body.light-mode h2 .highlight,
+body.light-mode h3 .highlight,
+body.light-mode span.highlight {
+    color: #2563eb !important; /* قفل شدن روی آبی سلطنتی */
+    text-shadow: none !important; /* حذف درخشش نئونی در روز */
+}
+/* =========================================
+   شکستن تقارن رباتیک (انسانی کردن طراحی)
+   ========================================= */
+
+/* ۱. برجسته کردن کارت وسط در بخش خدمات (فقط در دسکتاپ) */
+@media (min-width: 992px) {
+    .services-grid .service-card:nth-child(2) {
+        transform: scale(1.05); /* کارت وسط ۵ درصد بزرگتر می‌شود */
+        background-color: #1e293b;
+        border: 1px solid #00d4ff; /* حاشیه نئونی ثابت برای کارت وسط */
+        box-shadow: 0 10px 30px rgba(0, 212, 255, 0.1);
+        z-index: 2; /* قرار گرفتن روی کارت‌های دیگر */
+    }
+
+    /* در حالت روشن (Light Mode) برای کارت وسط */
+    body.light-mode .services-grid .service-card:nth-child(2) {
+        background-color: #ffffff !important;
+        border-color: #2563eb !important; /* آبی سلطنتی */
+        box-shadow: 0 10px 30px rgba(37, 99, 235, 0.15) !important;
+    }
+
+    /* افکت هاور برای کارت وسط (کمی بیشتر بزرگ شود) */
+    .services-grid .service-card:nth-child(2):hover {
+        transform: scale(1.08) translateY(-10px);
+    }
+}
+
+/* ۲. تغییر چیدمان متن در بخش درباره من (خروج از وسط‌چین مطلق) */
+.about-text h2, .about-text h3 {
+    text-align: right; /* در فارسی راست‌چین */
+}
+html[dir="ltr"] .about-text h2, html[dir="ltr"] .about-text h3 {
+    text-align: left; /* در انگلیسی چپ‌چین */
+}
+/* =========================================
+   مرحله پنجم: انیمیشن‌های ارگانیک و فیزیک دار
+   ========================================= */
+
+/* ۱. دکمه‌ها: باید سریع، چابک و با بازخورد فنری فعال شوند */
+.btn, .btn-primary, .btn-outline, .btn-lang {
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+/* ۲. کارت‌ها (پروژه‌ها، خدمات، مهارت‌ها): باید حسی سنگین، بسیار نرم و باوقار داشته باشند */
+.project-card, .service-card, .skill-card, .blog-card, .about-img .img-box {
+    transition: transform 0.45s cubic-bezier(0.25, 1, 0.5, 1), 
+                border-color 0.45s cubic-bezier(0.25, 1, 0.5, 1), 
+                box-shadow 0.45s cubic-bezier(0.25, 1, 0.5, 1) !important;
+}
+
+/* ۳. لینک‌های متنی و آیکون‌ها: سبک‌ترین عناصر سایت، تغییر رنگ بسیار سریع */
+.main-nav a, .social-icon, .read-more, .theme-btn, .logo a {
+    transition: all 0.15s ease-out !important;
 }
