@@ -1633,3 +1633,71 @@ html[dir="ltr"] .about-text h2, html[dir="ltr"] .about-text h3 {
 .main-nav a, .social-icon, .read-more, .theme-btn, .logo a {
     transition: all 0.15s ease-out !important;
 }
+/* =========================================
+   هماهنگی خودکار عکس‌ها در کادرهای کوچک و بزرگ
+   ========================================= */
+
+/* ۱. برای کادر کوچک در صفحه لیست پروژه‌ها */
+.project-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* عکس بدون دفرمه شدن کادر را پر می‌کند */
+    display: block;
+}
+
+/* ۲. برای کادر بزرگ در صفحه جزئیات پروژه */
+.detail-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* عکس بزرگ می‌شود و کادر بنر را پر می‌کند */
+    display: block;
+}
+/* =========================================
+   هماهنگی خودکار عکس‌های وبلاگ (بزرگ و کوچک)
+   ========================================= */
+
+/* ۱. برای کادر کوچک در صفحه لیست مقالات وبلاگ */
+.blog-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* پر کردن کادر بدون دفرمه شدن */
+    display: block;
+}
+
+/* ۲. برای کادر بزرگ در صفحه خودِ مقاله */
+.post-image img {
+    width: 100%;
+    height: 400px; /* تنظیم ارتفاع ثابت ۴۰۰ پیکسل برای بنر مقاله */
+    object-fit: cover; /* پر کردن بنر بزرگ به زیبایی */
+    border-radius: 15px; /* هماهنگ کردن گردی گوشه‌ها با طراحی قالب */
+    display: block;
+}
+/* =========================================
+   حل مشکل کات شدن و نصفه شدن عکس‌ها در دسکتاپ
+   ========================================= */
+
+.project-image {
+    width: 100% !important;
+    height: auto !important; /* حذف ارتفاع ثابت قدیمی */
+    aspect-ratio: 16 / 9 !important; /* قفل کردن تناسب روی ۱۶:۹ استاندارد عکس شما */
+    overflow: hidden;
+    position: relative;
+}
+
+/* برای وبلاگ هم همین اصلاح را انجام می‌دهیم تا عکس مقالات در دسکتاپ کات نشود */
+.blog-image {
+    width: 100% !important;
+    height: auto !important;
+    aspect-ratio: 16 / 9 !important;
+    overflow: hidden;
+    position: relative;
+}
+/* --- اصلاح نهایی عکس داخل مقاله برای جلوگیری از کات شدن در موبایل --- */
+.post-image img {
+    width: 100%;
+    height: auto !important; /* حذف ارتفاع ثابت ۴۰۰ پیکسل قدیمی */
+    aspect-ratio: 8 / 5 !important; /* حفظ تناسب دقیق ۸۰۰ در ۵۰۰ عکس شما */
+    object-fit: cover;
+    border-radius: 15px;
+    display: block;
+}
