@@ -155,17 +155,18 @@
         </div>
     </section>
 
-    <!-- NEW: Featured Projects (بخش جدید: پروژه‌های منتخب) -->
+    <!-- بخش پروژه‌های منتخب در صفحه اصلی (کاملاً اصلاح شده و بدون خطای تگ) -->
     <section class="featured-projects">
         <div class="container">
-            <h2>کارهایی که اخیراً <span class="highlight">برایشان وقت گذاشته‌ام</span></h2>
+            <h2 class="section-title">کارهایی که اخیراً <span class="highlight">برایشان وقت گذاشته‌ام</span></h2>
             
             <div class="portfolio-grid">
-                <!-- فقط ۲ پروژه مهم را اینجا می‌گذاریم -->
+                
+                <!-- پروژه ۱ -->
                 <div class="project-card">
-                <div class="project-image">
-                <img src="Edge-Bot-intelligent-robotic-agent.webp" alt="پروژه ایجنت هوشمند رباتیک EdgeBot طراحی شده توسط ابوالفضل حسین زاده">
-                </div>
+                    <div class="project-image">
+                        <img src="Edge-Bot-intelligent-robotic-agent.webp" alt="پروژه ایجنت هوشمند رباتیک EdgeBot طراحی شده توسط ابوالفضل حسین زاده">
+                    </div>
                     <div class="project-info">
                         <h3>ایجنت هوشمند رباتیک EdgeBot</h3>
                         <p>طراحی ربات،آموزش رباتیک،تولید پروژه،عیب یابی،برنامه نویسی</p>
@@ -173,24 +174,30 @@
                             <a href="project-1.html" class="link-btn">جزئیات بیشتر</a>
                         </div>
                     </div>
-                </div>
-                
+                </div> <!-- بسته‌شدن پروژه ۱ (خیلی مهم) -->
+
+                <!-- پروژه ۲ -->
                 <div class="project-card">
-                <div class="project-image">
-                <img src="Elev-Ai-smart-startup-advisor.webp" alt="پروژه ایجنت هوشمند مشاور استارتاپ ElevAi  طراحی شده توسط ابوالفضل حسین زاده">
-                </div>
+                    <div class="project-image">
+                        <img src="Elev-Ai-smart-startup-advisor.webp" alt="پروژه ایجنت هوشمند مشاور استارتاپ ElevAi طراحی شده توسط ابوالفضل حسین زاده">
+                    </div>
                     <div class="project-info">
                         <h3>ایجنت هوشمند مشاور استارتاپ ElevAi</h3>
                         <p>تحلیل ایده ،اعتبارسنجی ایده، طراحی مدل کسب‌وکار،تحلیل بازار هدف</p>
                         <div class="project-links">
                             <a href="project-2.html" class="link-btn">جزئیات بیشتر</a>
                         </div>
+                    </div>
+                </div> <!-- بسته‌شدن پروژه ۲ (خیلی مهم) -->
 
-            <!-- دکمه مشاهده همه -->
+            </div> <!-- بسته‌شدن گرید (خیلی مهم) -->
+
+            <!-- دکمه مشاهده همه پروژه‌ها (خارج از گرید و در مرکز صفحه) -->
             <div style="text-align: center; margin-top: 40px;">
-                <a href="projects.html" class="btn btn-outline">مشاهده همه پروژه‌ها <i class="fas fa-arrow-left"></i></a>
+                <a href="projects.html" class="btn btn-outline">مشاهده همه پروژه‌ها <i class="fas fa-arrow-left" style="margin-right: 8px;"></i></a>
             </div>
-        </div>
+            
+        </div> <!-- بسته‌شدن کانتینر (خیلی مهم) -->
     </section>
 
     <!-- Contact Section -->
@@ -252,9 +259,10 @@
                 <div style="flex: 1; min-width: 200px;">
                     <h4 style="color: #fff; margin-bottom: 20px; font-size: 1.1rem;">مسیرهای سریع</h4>
                     <ul style="list-style: none; padding: 0; margin: 0; line-height: 2;">
-                        <li><a href="about.html" style="color: #94a3b8; text-decoration: none; transition: 0.3s;" onmouseover="this.style.color='#00d4ff'" onmouseout="this.style.color='#94a3b8'">داستان من</a></li>
-                        <li><a href="projects.html" style="color: #94a3b8; text-decoration: none; transition: 0.3s;" onmouseover="this.style.color='#00d4ff'" onmouseout="this.style.color='#94a3b8'">کارهایی که کرده‌ام</a></li>
-                        <li><a href="blog.html" style="color: #94a3b8; text-decoration: none; transition: 0.3s;" onmouseover="this.style.color='#00d4ff'" onmouseout="this.style.color='#94a3b8'">یادداشت‌های فنی</a></li>
+                        <!-- کدهای تمیز شده بدون کدهای جاوااسکریپت مزاحم -->
+                        <li><a href="about.html">داستان من</a></li>
+                         <li><a href="projects.html">کارهایی که کرده‌ام</a></li>
+                        <li><a href="blog.html">یادداشت‌های فنی</a></li>
                     </ul>
                 </div>
 

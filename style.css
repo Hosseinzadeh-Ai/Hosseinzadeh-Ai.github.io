@@ -1701,3 +1701,30 @@ html[dir="ltr"] .about-text h2, html[dir="ltr"] .about-text h3 {
     border-radius: 15px;
     display: block;
 }
+/* =========================================
+   اصلاح نهایی رنگ لینک‌های فوتر (رنگی بودن از همان ابتدا)
+   ========================================= */
+
+/* حالت تاریک (دارک): لینک‌ها از همان ابتدا فیروزه‌ای نئونی هستند */
+.site-footer ul a {
+    color: #00d4ff !important; /* فیروزه‌ای نئونی ثابت */
+    text-shadow: 0 0 5px rgba(0, 212, 255, 0.2);
+    transition: all 0.25s ease-in-out !important;
+}
+
+/* افکت هاور در تاریکی: وقتی موس می‌رود روی لینک، سفید می‌شود و می‌درخشد */
+.site-footer ul a:hover {
+    color: #ffffff !important;
+    text-shadow: 0 0 10px #00d4ff !important;
+}
+
+/* حالت روشن (لایت): لینک‌ها از همان ابتدا آبی سلطنتی هستند */
+body.light-mode .site-footer ul a {
+    color: #2563eb !important; /* آبی سلطنتی ثابت */
+    text-shadow: none !important;
+}
+
+/* افکت هاور در روشنایی: وقتی موس می‌رود روی لینک، سرمه‌ای تیره می‌شود */
+body.light-mode .site-footer ul a:hover {
+    color: #0f172a !important;
+}
