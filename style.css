@@ -1728,3 +1728,137 @@ body.light-mode .site-footer ul a {
 body.light-mode .site-footer ul a:hover {
     color: #0f172a !important;
 }
+/* =========================================
+   امکانات حرفه‌ای وبلاگ (پیشرفت مطالعه + دکمه بازگشت به بالا)
+   ========================================= */
+
+/* نوار پیشرفت مطالعه در بالای صفحه */
+#scroll-progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 3px;
+    background: #00d4ff; /* نئونی در حالت تاریک */
+    width: 0%;
+    z-index: 10001;
+    transition: width 0.1s ease;
+}
+body.light-mode #scroll-progress {
+    background: #2563eb !important; /* آبی سلطنتی در حالت روشن */
+}
+
+/* دکمه شناور بازگشت به بالا */
+.back-to-top-btn {
+    position: fixed;
+    bottom: 30px;
+    left: 30px; /* در صفحات فارسی سمت چپ می‌افتد */
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background-color: #1e293b;
+    color: #00d4ff;
+    border: 1px solid #00d4ff;
+    font-size: 1.2rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    z-index: 999;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.4);
+}
+
+.back-to-top-btn.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+.back-to-top-btn:hover {
+    background-color: #00d4ff;
+    color: #0f172a;
+    transform: translateY(-5px);
+}
+
+/* حالت روشن دکمه بازگشت به بالا */
+body.light-mode .back-to-top-btn {
+    background-color: #ffffff !important;
+    color: #2563eb !important;
+    border-color: #2563eb !important;
+}
+
+body.light-mode .back-to-top-btn:hover {
+    background-color: #2563eb !important;
+    color: #ffffff !important;
+}
+
+/* در صفحات انگلیسی دکمه سمت راست می‌افتد */
+html[dir="ltr"] .back-to-top-btn {
+    left: auto;
+    right: 30px;
+}
+/* =========================================
+   افزایش کنتراست متون خاکستری (استاندارد WCAG 2.2 AA)
+   ========================================= */
+
+/* روشن‌تر کردن متون فرعی در حالت تاریک برای خوانایی عالی */
+.blog-meta, 
+.post-meta, 
+.contact-item span, 
+.hero-subtitle, 
+.site-footer p,
+.hero-footer-socials span {
+    color: #cbd5e1 !important; /* افزایش کنتراست نسبت به پس‌زمینه تیره */
+}
+
+.blog-content p, 
+.project-info p, 
+.service-card p {
+    color: #e2e8f0 !important;
+}
+
+/* تیره و پررنگ‌تر کردن متون فرعی در حالت روشن (Light Mode) */
+body.light-mode .blog-meta, 
+body.light-mode .post-meta, 
+body.light-mode .contact-item span, 
+body.light-mode .site-footer p,
+body.light-mode .blog-content p, 
+body.light-mode .project-info p, 
+body.light-mode .service-card p,
+body.light-mode .hero-footer-socials span {
+    color: #334155 !important; /* کنتراست بالا روی صفحه سفید */
+}
+/* =========================================
+   میکروانیمیشن‌های مدرن (Vercel Style Micro-interactions)
+   ========================================= */
+
+/* افکت نورانی ملایم بالای کارت‌ها هنگام هاور */
+.project-card, .service-card, .blog-card {
+    position: relative;
+}
+
+.project-card::before, .service-card::before, .blog-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #00d4ff, transparent);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.project-card:hover::before, 
+.service-card:hover::before, 
+.blog-card:hover::before {
+    opacity: 1; /* خط نورانی نئونی بالای کارت هنگام هاور باز می‌شود */
+}
+
+/* حالت روشن برای افکت کارت‌ها */
+body.light-mode .project-card::before, 
+body.light-mode .service-card::before, 
+body.light-mode .blog-card::before {
+    background: linear-gradient(90deg, transparent, #2563eb, transparent) !important;
+}
