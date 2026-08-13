@@ -1,4 +1,4 @@
-👋 Hi, I'm AbolfazlHosseinzadeh
+👋 Hi, I'm Abolfazl Hosseinzadeh
 
 💻 Software Engineer and Ai Specialist
 
