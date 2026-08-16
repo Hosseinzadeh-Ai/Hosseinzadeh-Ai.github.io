@@ -320,35 +320,5 @@
     });
     
 </script>
-<!-- نوار هشدار کوکی (GDPR) - اصلاح شده برای موبایل -->
-    <div id="cookie-consent" class="cookie-banner">
-        <p>
-            <i class="fas fa-cookie-bite" style="color: #00d4ff; margin-left: 8px;"></i>
-            این وب‌سایت برای بهبود تجربه کاربری و تحلیل بازدیدها از کوکی‌ها استفاده می‌کند. با ادامه استفاده از سایت، شما با این موضوع موافقت می‌کنید.
-        </p>
-        <button id="accept-cookies" class="btn btn-primary">
-            متوجه شدم
-        </button>
-    </div>
-
-    <!-- اسکریپت کنترل نوار کوکی -->
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            const cookieBanner = document.getElementById('cookie-consent');
-            const acceptBtn = document.getElementById('accept-cookies');
-
-            if (!localStorage.getItem('cookiesAccepted')) {
-                setTimeout(() => {
-                    cookieBanner.classList.add('show');
-                }, 1000);
-            }
-
-            acceptBtn.addEventListener('click', function() {
-                localStorage.setItem('cookiesAccepted', 'true');
-                cookieBanner.classList.remove('show');
-            });
-        });
-    </script>
-    
 </body>
 </html>
